@@ -1,0 +1,14 @@
+https://www.genesis.com/kr/ko/main.html
+https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
+
+헤더
+내용:왼쪽에 로고, 
+구성:
+이벤트:
+
+섹션1(메인섹션)
+내용:제품소개g시리즈gv시리즈;
+구성:이미지 + 왼쪽텍스트 + 전체 보더;
+이벤트:마우스 휠이벤트(슬라이드페이드인아웃);
+        텍스트 나타남
+        마우스 오버시 보더 생김
