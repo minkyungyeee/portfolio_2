@@ -4,7 +4,7 @@
 html,body {width:100%;height:100%;}
 
 html {overflow-y:scroll;}
-body {font:normal 14px/1 'Roboto', 'Noto Sans KR', 'Poppins';color:#232323;background:#fff;} 
+body {font:normal 14px/1 'Montserrat', 'Roboto', 'Noto Sans KR';color:#232323;background:#fff;} 
 h1,h2,h3,h4,h5,h6 {font-weight:normal;font-size:14px;}
 em,i,address {font-style:normal;}
 ul,li {list-style:none;}
