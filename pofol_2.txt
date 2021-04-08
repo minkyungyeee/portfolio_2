@@ -7,6 +7,7 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 내용:로고,네비게이션,검색,,
 구성:왼쪽에 로고, 가운데 섹션이동 메뉴, 오른쪽 고객센터,마이페이지,검색,햄버거메뉴(메뉴넣기)
       햄버거메뉴에서 나타나는 메뉴는 화면전체로등장
+	네비 모델(section1,2), 체험(section3), 구매(section4), 제네시스(section5,6), 이벤트(section7)
 이벤트: 마우스 내리는중 사라지고, 올릴때 등장, 
 반응형:
 	1340px; 고객센터,마이페이지->아이콘으로변경
