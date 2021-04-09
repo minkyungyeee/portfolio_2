@@ -13,7 +13,17 @@
                 that.footerFn();
         },
         headerFn:function(){
-            
+            var $asideBtn = $('#header .aside-btn');
+            var $hamGap = $('#header .ham-gap');
+            var $bar = $('#header .bar');
+
+            $asideBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $hamGap.toggleClass('addActive');
+                    $bar.toggleClass('addActive');
+                }
+            })
         },
         section1Fn:function(){
 
