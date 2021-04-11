@@ -14,7 +14,7 @@
 #wrap #header .wrap .gap .container {width:100%;text-align:center;}
 
 /* header_logo */
-#wrap #header .wrap .gap .container #logo {float:left;width:112px;height:36px;padding:26px 0 22px 0;}
+#wrap #header .wrap .gap .container #logo {float:left;width:112px;/* height:36px; */padding-top:26px;}
 #wrap #header .wrap .gap .container #logo a {display:inline-block;}
 #wrap #header .wrap .gap .container #logo a > img {width:100%;}
 
@@ -30,22 +30,18 @@
 #wrap #header .wrap .gap .container #aside > ul {width:100%;}
 #wrap #header .wrap .gap .container #aside > ul > li {float:left;padding-left:20px;height:100%;}
 /* header_aside_contact */
-#wrap #header .wrap .gap .container #aside > ul > li.contact {}
 #wrap #header .wrap .gap .container #aside > ul > li.contact > div {display:inline-block;}
-#wrap #header .wrap .gap .container #aside > ul > li.contact > div > a {display:none;width:100%;color:#fff;font-size:15px;font-weight:500;line-height:70px;padding:0 10px;box-sizing:border-box;transition:all .6s;}
-#wrap #header .wrap .gap .container #aside > ul > li.contact > div > a:hover {color:#ad7b61;}
-
-#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div {display:block;width:100%;line-height:70px;}
-#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div > a {display:block;width:17px;height:17px;color:#fff;padding:0 10px;}
-#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div > a > img {width:100%;height:100%;}
+#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div {padding:0 10px;}
+#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div .full {display:block;width:100%;color:#fff;font-size:15px;font-weight:500;line-height:70px;transition:all .6s;}
+#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div .full:hover {color:#ad7b61;}
+#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div .media {display:none;width:100%;color:#fff;line-height:70px;transition:all .6s;}
+#wrap #header .wrap .gap .container #aside > ul > li.contact > div > div .media > img {width:17px;height:17px;}
 /* header_aside_seach */
-#wrap #header .wrap .gap .container #aside > ul > li.search {display:inline-block;}
 #wrap #header .wrap .gap .container #aside > ul > li.search a {display:block;font-size:15px;line-height:70px;color:#fff;transition:all .6s;}
-#wrap #header .wrap .gap .container #aside > ul > li.search a i {}
+#wrap #header .wrap .gap .container #aside > ul > li.search a i {width:100%;}
 #wrap #header .wrap .gap .container #aside > ul > li.search a:hover {color:#ad7b61;}
 /* header_aside_menu-plus */
-#wrap #header .wrap .gap .container #aside > ul > li.meun-plus {display:inline-block;width:70px;height:70px;}
-#wrap #header .wrap .gap .container #aside > ul > li.meun-plus .aside-btn {width:100%;height:100%;}
+#wrap #header .wrap .gap .container #aside > ul > li.meun-plus .aside-btn {display:block;width:70px;height:70px;}
 #wrap #header .wrap .gap .container #aside > ul > li.meun-plus .aside-btn .ham-gap {display:block;padding:25px;height:100%;box-sizing:border-box;border:0;}
 #wrap #header .wrap .gap .container #aside > ul > li.meun-plus .aside-btn .ham-gap.addActive {border:1px solid #fff;}
 #wrap #header .wrap .gap .container #aside > ul > li.meun-plus .aside-btn .ham-gap span {position:relative;display:block;width:100%;height:100%;}
