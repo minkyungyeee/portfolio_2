@@ -70,7 +70,41 @@
 #wrap #main {z-index:2;position:relative;}
 
 /* section1 */
-#wrap #main #section1 {}
+#wrap #main #section1 {width:100%;height:969px;}
+#wrap #main #section1 .wrap {width:100%;height:100%;}
+#wrap #main #section1 .wrap .gap {width:100%;height:100%;}
+#wrap #main #section1 .wrap .gap .container {width:100%;height:100%;}
+/* section1_slide box */
+#wrap #main #section1 .wrap .gap .container .slide-container {position:relative;width:100%;height:100%;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view {z-index:1;position:relative;width:100%;height:100%;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap {position:relative;width:100%;height:100%;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide {position:absolute;width:100%;height:100%;top:0;left:0;background:#000 url(../img/slide0.jpg) no-repeat 60% 50%;background-size:110% auto;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide0 {background-image:url(../img/slide0.jpg);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap {padding:80px;width:100%;height:100%;box-sizing: border-box;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content {width:100%;height:100%;border:1px solid #ad7b61;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .top-text {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .top-text h3 {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .top-text h2 {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .top-text h2 h4 {}
+
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text p {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text .btn-box {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text .btn-box .left-btn {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text .btn-box .left-btn span {}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .bottom-text .btn-box .right-btn span {}
+
+#wrap #main #section1 .wrap .gap .container .slide-container .arrow-next {z-index:2;position:absolute;}
+#wrap #main #section1 .wrap .gap .container .slide-container .arrow-next .next-btn {}
+#wrap #main #section1 .wrap .gap .container .slide-container .arrow-prev {z-index:2;position:absolute;}
+#wrap #main #section1 .wrap .gap .container .slide-container .arrow-prev .prev-btn {}
+
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box {z-index:2;position:absolute;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li {}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li a {}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li a.pause-btn {}
 
 /* section2 */
 #wrap #main #section2 {}
