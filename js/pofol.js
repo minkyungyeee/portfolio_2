@@ -35,20 +35,22 @@
 
             var cnt = 0;
             var n = $('#section1 .slide').length; //4
+            var setId = null;
+            var setId2 = null;
+            var pause = 0;
 
             function mainNextSlideFn(){
                 $slide.css({zIndex:1});
                 $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3});
-                $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1500);
+                $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1000);
                 pageBtnColorEventFn();
             }
 
             function mainPrevSlideFn(){
-                $slide.css({zIndex:1,opacity:1});
-                $slide.eq(cnt).css({zIndex:3});
-                $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:4}).stop().animate({opacity:1},0).animate({opacity:0},1500);
+                $slide.css({zIndex:1,opacity:0});
+                $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:1},1000);
+                $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:3}).stop().animate({opacity:1},0).animate({opacity:0},1000);
                 pageBtnColorEventFn();
-                activeBtnFn();
             }
 
             function nextSlideCountFn(){
@@ -65,6 +67,7 @@
 
             $nextBtn.on({
                 click:function(){
+                    pauseTimerFn();
                     if(!$slide.is(':animated')){
                         nextSlideCountFn();
                     }
@@ -73,28 +76,12 @@
 
             $prevBtn.on({
                 click:function(){
+                    pauseTimerFn();
                     if(!$slide.is(':animated')){
                         prevSlideCountFn();
                     }
                 }
             });
-
-            function activeBtnFn(){
-                $activeBtn.on({
-                    mouseenter:function(e){
-                        e.preventDefault();
-                        $activeBtn.removeClass('addBgActive');
-                        $(this).addClass('addBgActive');
-                    },
-                    mouseleave:function(e){
-                        e.preventDefault();
-                        $activeBtn.removeClass('addBgActive');
-                    }
-                });
-            }
-
-            activeBtnFn();
-
 
             function pageBtnColorEventFn(){
                 var z = cnt;
@@ -109,6 +96,7 @@
             $pageBtn.each(function(idx){
                 $(this).on({
                     click:function(){
+                        pauseTimerFn();
                         if(cnt > idx){
                             cnt = idx;
                             mainNextSlideFn();
@@ -121,9 +109,59 @@
                 });
             });
 
+            function autoPlayFn(){
+                setId = setInterval(nextSlideCountFn,4000);
+            }
+
+            autoPlayFn();
+
+            function pauseTimerFn(){
+                var t = 0;
+                clearInterval(setId);
+                clearInterval(setId2);
+                setId2 = setInterval(function(){
+                    t++;
+                    if(t>4){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                        t=0;
+                        nextSlideCountFn();
+                        autoPlayFn();
+                    }
+                },1000);
+            }
+
+            // function pauseFn(){
+            //     if(pause==1){
+            //         clearInterval(setId);
+            //         clearInterval(setId2);
+            //     }
+            //     if(pause==0){
+            //         autoPlayFn();
+            //         pause=1;
+            //     }
+            // }
+
             $pauseBtn.on({
                 click:function(){
+                    // pause=1;
+                    // if(pause == 1){
+                    //     pauseFn();
+                    //     pause=0;
+                    // }
                     $(this).toggleClass('addPauseActive');
+                }
+            });
+
+            $activeBtn.on({
+                mouseenter:function(e){
+                    e.preventDefault();
+                    $activeBtn.removeClass('addBgActive');
+                    $(this).addClass('addBgActive');
+                },
+                mouseleave:function(e){
+                    e.preventDefault();
+                    $activeBtn.removeClass('addBgActive');
                 }
             });
         },
