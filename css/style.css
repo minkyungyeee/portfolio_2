@@ -78,14 +78,14 @@
 #wrap #main #section1 .wrap .gap .container .slide-container {position:relative;width:100%;height:100%;background:#111;}
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view {z-index:1;position:relative;width:100%;height:100%;}
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap {position:relative;display:block;width:100%;height:100%;}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide {z-index:1;position:absolute;width:100%;height:100%;top:0;left:0;background:url(../img/slide0.jpg) no-repeat 50% 50%;background-size:130% auto;}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide::before {z-index:5;position:absolute;content:'';right:0;bottom:0;top:auto;height:20%;width:100%;background-image: linear-gradient(to bottom, transparent, #111);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide {z-index:1;position:absolute;width:100%;height:100%;top:0;left:0;background:url(../img/slide_0.jpg) no-repeat 50% 50%;background-size:130% auto;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide::before {z-index:5;position:absolute;content:'';right:0;bottom:0;top:auto;height:30%;width:100%;background-image: linear-gradient(to bottom, transparent, #111);}
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide::after {z-index:5;position:absolute;content:'';left:0;top:0;height:100%;width:50%;background-image: linear-gradient(to left, transparent, #111);opacity:.35;}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide0 {z-index:4;background-image:url(../img/slide0.jpg);}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide1 {z-index:3;background-image:url(../img/genesis-kr-main-key-visual-g80-01-desktop-2560x900-ko.jpg);}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide2 {z-index:2;background-image:url(../img/genesis-kr-design-the-new-gv70-main-hero-desktop-2560x900-ko_2.jpg);}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide3 {z-index:1;background-image:url(../img/genesis-kr-design-the-new-g70-main-hero-desktop-2560x900-ko.jpg);}
-#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap {padding:70px 80px 150px 80px;width:100%;height:100%;box-sizing: border-box;}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide0 {z-index:4;background-image:url(../img/slide_0.jpg);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide1 {z-index:3;background-image:url(../img/slide_1.jpg);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide2 {z-index:2;background-image:url(../img/slide_2.jpg);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide3 {z-index:1;background-image:url(../img/slide_3.jpg);}
+#wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap {padding:70px 4.2038886% 7.8822911% 4.2038886%;width:100%;height:100%;box-sizing: border-box;}/* 70px(얘는헤더땜에 고정값,모바일에서바꿔줌) 80px 150px 80px */
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content {width:100%;height:100%;border:1px solid #ad7b61;border-top:0;}
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap {padding:56px 50px;width:100%;height:100%;box-sizing: border-box;}
 #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap {z-index:6;position:relative;width:100%;height:100%;}
@@ -128,19 +128,49 @@
 
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box {z-index:2;position:absolute;bottom:10%;left:50%;margin-left:-7.4px;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li {float:left;padding:0 5px;}
-#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .page-btn {position:relative;display:inline-block;width:15px;height:15px;text-align:center;line-height:15px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .page-btn {display:inline-block;width:15px;height:15px;text-align:center;line-height:15px;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .page-btn > span {display:inline-block;width:8px;height:8px;background:rgba(255,255,255,.6);border-radius: 50%;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .page-btn.addPauseActive > span {background:transparent;border:3px solid #fff;border-radius: 50%;}
 
-#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn {position:relative;display:inline-block;width:15px;height:15px;text-align:center;line-height:15px;}
+/* #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn {position:relative;display:inline-block;width:15px;height:15px;text-align:center;line-height:15px;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn span {display:inline-block;width:3px;height:12px;background:rgba(255,255,255,1);margin-right:2px;border-radius:0;}
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn.addPauseActive span {display:none;}
 
 #wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn > i::after {position:absolute;top:0;left:4px;display:none;content:'';border-left:10px solid #fff;border-right:8px solid transparent;border-bottom:8px solid transparent;border-top:8px solid transparent;}
-#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn.addPauseActive > i::after {display:block;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .pause-btn.addPauseActive > i::after {display:block;} */
+
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap {position:relative;width:15px;height:15px;line-height:15px;margin-left:4px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap .pause-btn {z-index:2;position:absolute;display:inline-block;width:100%;height:100%;text-align:center;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap .pause-btn span {display:inline-block;width:3px;height:12px;background:rgba(255,255,255,1);margin-right:2px;border-radius:0;}
+
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap .play-btn {z-index:1;display:none;position:absolute;top:0;left:0;width:15px;height:15px;text-align:center;line-height:15px;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap .play-btn span {display:inline-block;border-left:10px solid #fff;border-right:8px solid transparent;border-bottom:8px solid transparent;border-top:8px solid transparent;}
+
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap.addPauseActive .pause-btn {z-index:1;display:none;}
+#wrap #main #section1 .wrap .gap .container .slide-container .pagenation-box li .btn-wrap.addPauseActive .play-btn {z-index:2;display:inline-block;}
 
 /* section2 */
-#wrap #main #section2 {}
+#wrap #main #section2 {width:100%;padding:130px 0;background:#111;}
+#wrap #main #section2 .wrap {width:100%;}
+#wrap #main #section2 .wrap .gap {margin:0 20px;}
+#wrap #main #section2 .wrap .gap .container {width:100%;}
+#wrap #main #section2 .wrap .gap .container .title {text-align:center;padding-bottom:20px;}
+#wrap #main #section2 .wrap .gap .container .title h3 {font-size:30px;font-weight:300;color:rgba(255,255,255,.8);padding-bottom:15px;}
+#wrap #main #section2 .wrap .gap .container .title h2 {font-size:40px;font-weight:500;color:#fff;}
+
+#wrap #main #section2 .wrap .gap .container .cube-btn-box {}
+#wrap #main #section2 .wrap .gap .container .cube-btn-box .cube-btn-gap {}
+#wrap #main #section2 .wrap .gap .container .cube-btn-box .cube-btn-gap input[type="radio"] {}
+#wrap #main #section2 .wrap .gap .container .cube-btn-box .cube-btn-gap label {}
+
+#wrap #main #section2 .wrap .gap .container .cube {}
+#wrap #main #section2 .wrap .gap .container .cube .g80 {}
+#wrap #main #section2 .wrap .gap .container .cube .front {}
+#wrap #main #section2 .wrap .gap .container .cube .back {}
+#wrap #main #section2 .wrap .gap .container .cube .side {}
+#wrap #main #section2 .wrap .gap .container .cube .inside {}
+#wrap #main #section2 .wrap .gap .container .cube .inside2 {}
+#wrap #main #section2 .wrap .gap .container .cube .auto {}
 
 /* section3 */
 #wrap #main #section3 {}

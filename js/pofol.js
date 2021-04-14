@@ -27,23 +27,39 @@
         },
         section1Fn:function(){
             var $slide = $('#section1 .slide');
+            var $btnWrap = $('#section1 .btn-wrap')
             var $activeBtn = $('#section1 .active-btn');
             var $pageBtn = $('#section1 .page-btn');
             var $pauseBtn = $('#section1 .pause-btn');
+            var $playBtn = $('#section1 .play-btn');
             var $nextBtn = $('#section1 .next-btn');
             var $prevBtn = $('#section1 .prev-btn');
+            var winH = $(window).innerWidth();
+            var secH = winH * 0.472937467;
 
             var cnt = 0;
             var n = $('#section1 .slide').length; //4
             var setId = null;
             var setId2 = null;
-            var pause = 0;
+
+            function resizeFn(){
+                winH = $(window).innerWidth();
+                secH = winH * 0.472937467;
+                $('#section1').css({height:secH});
+            }
+
+            setTimeout(resizeFn,100);
+
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
+            });
 
             function mainNextSlideFn(){
                 $slide.css({zIndex:1});
                 $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3});
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1000);
                 pageBtnColorEventFn();
+                console.log($btnWrap.hasClass('addPauseActive'));
             }
 
             function mainPrevSlideFn(){
@@ -51,6 +67,7 @@
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:1},1000);
                 $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:3}).stop().animate({opacity:1},0).animate({opacity:0},1000);
                 pageBtnColorEventFn();
+                console.log($btnWrap.hasClass('addPauseActive'));
             }
 
             function nextSlideCountFn(){
@@ -71,6 +88,10 @@
                     if(!$slide.is(':animated')){
                         nextSlideCountFn();
                     }
+                    if($btnWrap.hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                    }
                 }
             });
 
@@ -79,6 +100,10 @@
                     pauseTimerFn();
                     if(!$slide.is(':animated')){
                         prevSlideCountFn();
+                    }
+                    if($btnWrap.hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
                     }
                 }
             });
@@ -99,11 +124,15 @@
                         pauseTimerFn();
                         if(cnt > idx){
                             cnt = idx;
-                            mainNextSlideFn();
+                            mainPrevSlideFn();
                         }
                         if(cnt < idx){
                             cnt = idx;
-                            mainPrevSlideFn();
+                            mainNextSlideFn();
+                        }
+                        if($btnWrap.hasClass('addPauseActive')==true){
+                            clearInterval(setId);
+                            clearInterval(setId2);
                         }
                     }
                 });
@@ -131,27 +160,20 @@
                 },1000);
             }
 
-            // function pauseFn(){
-            //     if(pause==1){
-            //         clearInterval(setId);
-            //         clearInterval(setId2);
-            //     }
-            //     if(pause==0){
-            //         autoPlayFn();
-            //         pause=1;
-            //     }
-            // }
-
             $pauseBtn.on({
                 click:function(){
-                    // pause=1;
-                    // if(pause == 1){
-                    //     pauseFn();
-                    //     pause=0;
-                    // }
-                    $(this).toggleClass('addPauseActive');
+                    $(this).parent().addClass('addPauseActive');
+                    clearInterval(setId);
+                    clearInterval(setId2);
                 }
             });
+
+            $playBtn.on({
+                click:function(){
+                    $(this).parent().removeClass('addPauseActive');
+                    autoPlayFn();
+                }
+            })
 
             $activeBtn.on({
                 mouseenter:function(e){
