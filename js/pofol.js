@@ -36,8 +36,6 @@
             var $prevBtn = $('#section1 .prev-btn');
             var winH = $(window).innerWidth();
             var secH = winH * 0.472937467;
-            //var secH = winH * 0.573529412;
-            //var secH = winH * 0.509721492;
 
             var cnt = 0;
             var n = $('#section1 .slide').length; //4
@@ -70,7 +68,7 @@
                 $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3}).stop().animate({opacity:0},1000);
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1000);
                 pageBtnColorEventFn();
-                console.log($btnWrap.hasClass('addPauseActive'));
+                //console.log($btnWrap.hasClass('addPauseActive'));
             }
 
             function mainPrevSlideFn(){
@@ -78,7 +76,7 @@
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:1},1000);
                 $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:3}).stop().animate({opacity:1},0).animate({opacity:0},1000);
                 pageBtnColorEventFn();
-                console.log($btnWrap.hasClass('addPauseActive'));
+                //console.log($btnWrap.hasClass('addPauseActive'));
             }
 
             function nextSlideCountFn(){
@@ -199,7 +197,51 @@
             });
         },
         section2Fn:function(){
+            var $cubeBtn = $('#section2 .cube-btn');
+            var $cube = $('#section2 .cube');
+            var $g80 = $('#section2 .cube .g80');
+            var btnN = $('#section2 .cube-btn').attr('id');
+            var faceN = '.'+ btnN;
 
+            function faceNameFn(){
+                $(faceN).stop().animate({opacity:.1},0).animate({opacity:1},1000);
+            }
+
+            //setTimeout(faceNameFn,100);
+
+            $cubeBtn.each(function(idx){
+                $(this).on({
+                    click:function(){
+                        $cubeBtn.removeClass('addCubeChk');
+                        $(this).addClass('addCubeChk');
+                        $cube.removeClass('addAuto');
+
+                        if(idx == 0){
+                            $cube.animate({transform:'perspective(800),rotate3d(0,0,0,0deg)'});
+                        }
+                        if(idx == 1){
+                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,-180deg)'});
+                        }
+                        if(idx == 2){
+                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,-90deg)'});
+                        }
+                        if(idx == 3){
+                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,90deg)'});
+                        }
+                        if(idx == 4){
+                            $cube.animate({transform:'perspective(800),rotate3d(1,0,0,-90deg)'});
+                        }
+                        if(idx == 5){
+                            $cube.animate({transform:'perspective(800),rotate3d(1,0,0,90deg)'});
+                        }
+
+                        // $g80.stop().animate({opacity:.50},600);
+                        // btnN = $(this).attr('id');
+                        // faceN = '.'+ btnN;
+                        // faceNameFn();
+                    }
+                });
+            })
         },
         section3Fn:function(){
 
