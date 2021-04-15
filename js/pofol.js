@@ -36,6 +36,8 @@
             var $prevBtn = $('#section1 .prev-btn');
             var winH = $(window).innerWidth();
             var secH = winH * 0.472937467;
+            //var secH = winH * 0.573529412;
+            //var secH = winH * 0.509721492;
 
             var cnt = 0;
             var n = $('#section1 .slide').length; //4
@@ -44,7 +46,16 @@
 
             function resizeFn(){
                 winH = $(window).innerWidth();
-                secH = winH * 0.472937467;
+                if($(window).innerWidth()>1360){
+                    secH = winH * 0.472937467; /* 900px */
+                }
+                if($(window).innerWidth()<=1360){
+                    secH = winH * 0.573529412; /* 780px */
+                }
+                if($(window).innerWidth()<=980){
+                    secH = 700;
+                }
+                //secH = winH * 0.509721492;
                 $('#section1').css({height:secH});
             }
 
@@ -56,7 +67,7 @@
 
             function mainNextSlideFn(){
                 $slide.css({zIndex:1});
-                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3});
+                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3}).stop().animate({opacity:0},1000);
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1000);
                 pageBtnColorEventFn();
                 console.log($btnWrap.hasClass('addPauseActive'));
