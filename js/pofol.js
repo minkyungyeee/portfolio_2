@@ -2,6 +2,7 @@
     var pofol = {
         init:function(){
             var that = this;
+                that.scrollEventFn();
                 that.headerFn();
                 that.section1Fn();
                 that.section2Fn();
@@ -11,6 +12,10 @@
                 that.section6Fn();
                 that.section7Fn();
                 that.footerFn();
+        },
+        scrollEventFn:function(){
+
+
         },
         headerFn:function(){
             var $asideBtn = $('#header .aside-btn');
@@ -200,14 +205,28 @@
             var $cubeBtn = $('#section2 .cube-btn');
             var $cube = $('#section2 .cube');
             var $g80 = $('#section2 .cube .g80');
+            var scrollT = $(window).scrollTop();
+            var $titleT = $('#section2 .top-title');
+            var $titleB = $('#section2 .bottom-title');
+
             var btnN = $('#section2 .cube-btn').attr('id');
             var faceN = '.'+ btnN;
+            var setId = null;
+
+            
+            $(window).scroll(function(e){ 
+                scrollT = $(window).scrollTop()*.5;
+                //console.log(scrollW)
+                //console.log($('#section2').offset().top)896.6875
+                $titleT.css({left:scrollT});
+                $titleB.css({right:scrollT});
+            });
 
             function faceNameFn(){
                 $(faceN).stop().animate({opacity:.1},0).animate({opacity:1},1000);
             }
 
-            //setTimeout(faceNameFn,100);
+            setTimeout(faceNameFn,100);
 
             $cubeBtn.each(function(idx){
                 $(this).on({
@@ -217,34 +236,120 @@
                         $cube.removeClass('addAuto');
 
                         if(idx == 0){
-                            $cube.animate({transform:'perspective(800),rotate3d(0,0,0,0deg)'});
+                            $cube.css({transform:'perspective(1000px) rotate3d(0,0,0,0deg)'});
                         }
-                        if(idx == 1){
-                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,-180deg)'});
+                        else if(idx == 1){
+                            $cube.css({transform:'perspective(1000px) rotate3d(0,1,0,180deg)'});
                         }
-                        if(idx == 2){
-                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,-90deg)'});
+                        else if(idx == 2){
+                            $cube.css({transform:'perspective(1000px) rotate3d(0,1,0,-90deg)'});
                         }
-                        if(idx == 3){
-                            $cube.animate({transform:'perspective(800),rotate3d(0,1,0,90deg)'});
+                        else if(idx == 3){
+                            $cube.css({transform:'perspective(1000px) rotate3d(0,1,0,90deg)'});
                         }
-                        if(idx == 4){
-                            $cube.animate({transform:'perspective(800),rotate3d(1,0,0,-90deg)'});
+                        else if(idx == 4){
+                            $cube.css({transform:'perspective(1000px) rotate3d(1,0,0,-90deg)'});
                         }
-                        if(idx == 5){
-                            $cube.animate({transform:'perspective(800),rotate3d(1,0,0,90deg)'});
+                        else if(idx == 5){
+                            $cube.css({transform:'perspective(1000px) rotate3d(1,0,0,90deg)'});
                         }
 
-                        // $g80.stop().animate({opacity:.50},600);
-                        // btnN = $(this).attr('id');
-                        // faceN = '.'+ btnN;
-                        // faceNameFn();
+                        $g80.stop().animate({opacity:.1},600);
+                        btnN = $(this).attr('id');
+                        faceN = '.'+ btnN;
+                        faceNameFn();
+                        timerFn();
                     }
                 });
-            })
+
+                function timerFn(){
+                    clearInterval(setId);
+                    var t = 0;
+                    setId = setInterval(function(){
+                        t++;
+                        if(t>6){
+                            $cube.addClass('addAuto');
+                            $cubeBtn.removeClass('addCubeChk');
+                            $g80.stop().animate({opacity:.5},600);
+                        }
+                    },1000);
+                }
+            });
+
+            
         },
         section3Fn:function(){
+            var winw = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var $sec3 = $('#section3');
+            var $slide = $('#section3 .slide');
+            var $slideWrap = $('#section3 .slide-wrap');
+            var $nextBtn = $('#section3 .next-btn');
+            var $prevBtn = $('#section3 .prev-btn');
+            var $pageBtn = $('#section3 .page-btn');
 
+            var cnt = 0;
+            var n = $('#section3 .slide').length; 
+
+            function resizeFn(){
+                winw = $(window).innerWidth();
+                winH = $(window).innerHeight();
+
+                $slide.css({width:winw});
+                $sec3.css({width:winw,height:winH});
+            }
+
+            setTimeout(resizeFn,100);
+
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
+            });
+
+            function mainNextSlideFn(){
+                $slide.css({zIndex:1});
+                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:2});
+                $slide.eq(cnt).css({zIndex:n}).find('.col').stop().animate({height:0},0).animate({height:100+'%'},1000);
+            }
+
+            function mainPrevSlideFn(){
+                $slide.css({zIndex:1}).find('.col').stop().animate({height:100+'%'},0);
+                $slide.eq(cnt).css({zIndex:2});
+                $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:n}).find('.col').stop().animate({height:100+'%'},0).animate({height:0},1000);
+            }
+
+            function nextSlideCountFn(){
+                cnt ++;
+                if(cnt>n-1){cnt=0}
+                mainNextSlideFn();
+            }
+
+            function prevSlideCountFn(){
+                cnt --;
+                if(cnt<0){cnt=n-1}
+                mainPrevSlideFn();
+            }
+
+            $nextBtn.on({
+                click:function(){
+                    if(!$slideWrap.is(':animated')){
+                        nextSlideCountFn();
+                    }
+                }
+            });
+
+            $prevBtn.on({
+                click:function(){
+                    if(!$slideWrap.is(':animated')){
+                        prevSlideCountFn();
+                    }
+                }
+            });
+
+            $pageBtn.on({
+                click:function(){
+                    
+                }
+            })
         },
         section4Fn:function(){
 
