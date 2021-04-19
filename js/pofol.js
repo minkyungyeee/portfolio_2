@@ -215,18 +215,21 @@
 
             
             $(window).scroll(function(e){ 
-                scrollT = $(window).scrollTop()*.5;
-                //console.log(scrollW)
-                //console.log($('#section2').offset().top)896.6875
+                if($(window).innerWidth()>980){
+                    scrollT = $(window).scrollTop()*.5;
+                }
+                else{
+                    scrollT = $(window).scrollTop()*.3;
+                }
                 $titleT.css({left:scrollT});
                 $titleB.css({right:scrollT});
             });
 
             function faceNameFn(){
-                $(faceN).stop().animate({opacity:.1},0).animate({opacity:1},1000);
+                $(faceN).stop().animate({opacity:.5},0).animate({opacity:1},1000);
             }
 
-            setTimeout(faceNameFn,100);
+            //setTimeout(faceNameFn,100);
 
             $cubeBtn.each(function(idx){
                 $(this).on({
@@ -254,7 +257,7 @@
                             $cube.css({transform:'perspective(1000px) rotate3d(1,0,0,90deg)'});
                         }
 
-                        $g80.stop().animate({opacity:.1},600);
+                        $g80.stop().animate({opacity:.5},600);
                         btnN = $(this).attr('id');
                         faceN = '.'+ btnN;
                         faceNameFn();
@@ -279,24 +282,38 @@
             
         },
         section3Fn:function(){
-            var winw = $(window).innerWidth();
-            var winH = $(window).innerHeight();
-            var $sec3 = $('#section3');
-            var $slide = $('#section3 .slide');
-            var $slideWrap = $('#section3 .slide-wrap');
-            var $nextBtn = $('#section3 .next-btn');
-            var $prevBtn = $('#section3 .prev-btn');
-            var $pageBtn = $('#section3 .page-btn');
+            var winw        = $(window).innerWidth();
+            var winH        = $(window).innerHeight();
+            var $sec3       = $('#section3');
+            var $slide      = $('#section3 .slide');
+            var $col        = $('#section3 .col');
+            var $colH       = $(window).innerWidth()/2;
+            var $nextBtn    = $('#section3 .next-btn');
+            var $prevBtn    = $('#section3 .prev-btn');
+            var $pageBtn    = $('#section3 .page-btn');
+            var $pauseBtn   = $('#section3 .pause-btn');
+            var $playBtn    = $('#section3 .play-btn');
+            var $btnWrap    = $('#section3 .btn-wrap');
+            var $activeBtn  = $('#section3 .sns-btn-container .active-btn');
+            var $closeBtn  = $('#section3 .sns-btn-container .close-btn');
 
-            var cnt = 0;
-            var n = $('#section3 .slide').length; 
+            var cnt     = 0;
+            var n       = $('#section3 .slide').length;
+            var setId   = null;
+            var setId2  = null;
 
             function resizeFn(){
                 winw = $(window).innerWidth();
-                winH = $(window).innerHeight();
+                $colH = $(window).innerWidth()/2;
+                if($(window).innerWidth()>980){
+                    winH = $(window).innerHeight();
+                }
+                else{
+                    winH = 700;
+                }
 
-                $slide.css({width:winw});
                 $sec3.css({width:winw,height:winH});
+                $col.css({width:$colH,height:winH});
             }
 
             setTimeout(resizeFn,100);
@@ -307,14 +324,16 @@
 
             function mainNextSlideFn(){
                 $slide.css({zIndex:1});
-                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:2});
+                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:4});
                 $slide.eq(cnt).css({zIndex:n}).find('.col').stop().animate({height:0},0).animate({height:100+'%'},1000);
+                pageBtnColorEventFn();
             }
 
             function mainPrevSlideFn(){
                 $slide.css({zIndex:1}).find('.col').stop().animate({height:100+'%'},0);
-                $slide.eq(cnt).css({zIndex:2});
+                $slide.eq(cnt).css({zIndex:4});
                 $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:n}).find('.col').stop().animate({height:100+'%'},0).animate({height:0},1000);
+                pageBtnColorEventFn();
             }
 
             function nextSlideCountFn(){
@@ -331,25 +350,117 @@
 
             $nextBtn.on({
                 click:function(){
-                    if(!$slideWrap.is(':animated')){
+                    pauseTimerFn();
+                    if(!$slide.is(':animated')){
                         nextSlideCountFn();
+                    }
+                    if($btnWrap.hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
                     }
                 }
             });
 
             $prevBtn.on({
                 click:function(){
-                    if(!$slideWrap.is(':animated')){
+                    pauseTimerFn();
+                    if(!$slide.is(':animated')){
                         prevSlideCountFn();
+                    }
+                    if($btnWrap.hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
                     }
                 }
             });
 
-            $pageBtn.on({
+            function pageBtnColorEventFn(){
+                var z = cnt;
+                if(z>n-1){z=0}
+                $pageBtn.removeClass('addPauseActive');
+                $pageBtn.eq(z).addClass('addPauseActive');
+            }
+
+            pageBtnColorEventFn();
+
+            $pageBtn.each(function(idx){
+                $(this).on({
+                    click:function(){
+                        pauseTimerFn();
+                        if(cnt > idx){
+                            cnt = idx;
+                            mainPrevSlideFn();
+                        }
+                        if(cnt < idx){
+                            cnt = idx;
+                            mainNextSlideFn();
+                        }
+                        if($btnWrap.hasClass('addPauseActive')==true){
+                            clearInterval(setId);
+                            clearInterval(setId2);
+                        }
+                    }
+                })
+            });
+
+            $pauseBtn.on({
                 click:function(){
-                    
+                    $(this).parent().addClass('addPauseActive');
+                    clearInterval(setId);
+                    clearInterval(setId2);
                 }
-            })
+            });
+
+            $playBtn.on({
+                click:function(){
+                    $(this).parent().removeClass('addPauseActive');
+                    autoPlayFn();
+                }
+            });
+
+            function autoPlayFn(){
+                setId = setInterval(nextSlideCountFn,4000);
+            };
+
+            autoPlayFn();
+
+            function pauseTimerFn(){
+                var t = 0;
+                clearInterval(setId);
+                clearInterval(setId2);
+                setId2 = setInterval(function(){
+                    t ++;
+                    if(t>5){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                        t = 0 ;
+                        nextSlideCountFn();
+                        autoPlayFn();
+                    }
+                },1000)
+            }
+
+            $activeBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $('.sns-btn-wrap').addClass('addSnsActive');
+                    clearInterval(setId);
+                    clearInterval(setId2);
+                }
+            });
+            $closeBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $('.sns-btn-wrap').removeClass('addSnsActive');
+                    if($btnWrap.hasClass('addPauseActive')==true){
+                        $btnWrap.removeClass('addPauseActive')
+                    }
+                    autoPlayFn();
+                }
+            });
+
+
+
         },
         section4Fn:function(){
 

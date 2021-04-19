@@ -62,6 +62,9 @@
 
     /* section1 */
     #wrap #main #section1 {padding-top:50px;}
+
+    /* section2 */
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box {right:20px;}
 }
 
 @media all and (max-width:980px){
@@ -94,9 +97,46 @@
     #wrap #main #section1 .wrap .gap .container .slide-container .arrow-next {z-index:2;position:absolute;top:auto;bottom:3%;margin-top:0;right:3%;width:15px;height:15px;border-top:2px solid #fff;border-right:2px solid #fff;transform:rotate(45deg);}
     #wrap #main #section1 .wrap .gap .container .slide-container .arrow-prev {z-index:2;position:absolute;top:auto;bottom:3%;margin-top:0;left:3%;width:15px;height:15px;border-top:2px solid #fff;border-left:2px solid #fff;transform:rotate(-45deg);}
 
+    /* section2 */
+    #wrap #main #section2 .wrap {padding:100px 0;}
+    #wrap #main #section2 .wrap .gap .container .title h2 {font-size:50px;font-weight:600;}
+    #wrap #main #section2 .wrap .gap .container .content .cube {width:250px;height:250px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube.addAuto {width:250px;height:250px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.front   {transform:rotateY(0deg)    translateZ(125px);}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.back    {transform:rotateY(180deg)  translateZ(125px);}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.side    {transform:rotateY(90deg)   translateZ(125px);}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.inside  {transform:rotateY(-90deg)  translateZ(125px);}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.inside2 {transform:rotateX(90deg)   translateZ(125px);}
+    #wrap #main #section2 .wrap .gap .container .content .cube .g80.auto    {transform:rotateX(-90deg)  translateZ(125px);}
+
+    /* section3_slide_arrow-btn */
+    #wrap #main #section3 .wrap .gap .container .slide-container .arrow-next {margin-top:-10px;width:20px;height:20px;}
+    #wrap #main #section3 .wrap .gap .container .slide-container .arrow-prev {margin-top:-10px;width:20px;height:20px;}
+
 
 }
 
+@media all and (max-width:780px){
+    /* section2 */
+    #wrap #main #section2 .wrap {padding:130px 0;}
+    #wrap #main #section2 .wrap .gap .container .title.top-title {top:10%;}
+    #wrap #main #section2 .wrap .gap .container .title.bottom-title {bottom:0;}
+    #wrap #main #section2 .wrap .gap .container .content {position:relative;width:100%;text-align:center;padding:50px 0;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box {text-align:center;top:100%;right:0;width:100%;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn {display:inline-block;width:70px;padding-bottom:0;padding-right:10px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn .cube-chk {display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.6);margin-right:10px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn.addCubeChk .cube-chk {background:transparent;border:3px solid #fff;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn .cube-txt {display:inline-block;color:#fff;font-size:15px;}
+}
+
+@media all and (max-width:570px){
+    #wrap #main #section2 .wrap .gap .container .title h2 {font-size:40px;font-weight:600;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box {text-align:center;top:100%;right:0;width:100%;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn {display:inline-block;width:50px;padding-bottom:0;padding-right:5px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn .cube-chk {display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.6);margin-right:5px;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn.addCubeChk .cube-chk {background:transparent;border:3px solid #fff;}
+    #wrap #main #section2 .wrap .gap .container .content .cube-btn-box .cube-btn .cube-txt {display:inline-block;color:#fff;font-size:15px;}
+}
 @media all and (max-width:410px){
     /* section1_slide_top_text */
     #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap .slide-content .text-gap .text-wrap .top-text h3 {font-size:14px;}
