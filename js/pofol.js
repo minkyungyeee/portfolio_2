@@ -463,7 +463,28 @@
 
         },
         section4Fn:function(){
+            var $slideContent = $('#section4 .slide-content');
+            var $activeBtn = $('#section4 .active-btn');
 
+            $slideContent.on({
+                mouseenter:function(){
+                    $slideContent.removeClass('addMouseActive');
+                    $(this).addClass('addMouseActive');
+                },
+                mouseleave:function(){
+                    $slideContent.removeClass('addMouseActive');
+                }
+            });
+
+            $activeBtn.on({
+                mouseenter:function(){
+                    $activeBtn.removeClass('addBtnActive');
+                    $(this).addClass('addBtnActive');
+                },
+                mouseleave:function(){
+                    $activeBtn.removeClass('addBtnActive');
+                }
+            });
         },
         section5Fn:function(){
 
