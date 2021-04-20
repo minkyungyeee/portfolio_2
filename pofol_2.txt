@@ -52,6 +52,8 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 이벤트:  해당부분만 opacity:1; 자동으로 돌아가게
 반응형: 박스크기줄이기
 
+진행상황;;; 박스크기 반응형, 버튼생기고안생기고,,대체 어떻게해야하지,,페이지네이션버튼
+
 섹션5(awards)
 내용:기존사이트그대로
 구성:이미지박스, 왼쪽하단 텍스트박스, 하단 페이지네이션이 시간흐름을 맞춰서 색 생기게

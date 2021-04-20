@@ -465,6 +465,54 @@
         section4Fn:function(){
             var $slideContent = $('#section4 .slide-content');
             var $activeBtn = $('#section4 .active-btn');
+            var $slideWrap = $('#section4 .slide-wrap');
+            var $nextBtn = $('#section4 .next-btn');
+            var $prevBtn = $('#section4 .prev-btn');
+
+            var cnt = 0;
+            var winW = $(window).innerWidth();
+            var $content = $('#section4 .content');
+            var contentW = winW-240;
+
+            // function resizeFn(){
+            //     winW = $(window).innerWidth();
+            //     contentW = winW-240;
+
+            //     content.css({width:contentW});
+            // }
+
+            // setTimeout(resizeFn,100);
+
+            // $(window).resize(function(){
+            //     setTimeout(resizeFn,100);
+            // });
+            function mainslideFn(){
+                $slideWrap.stop().animate({left:-363.25*cnt},600)
+            }
+
+            function nextSlideCountFn(){
+                cnt ++;
+                mainslideFn();
+            }
+
+            function prevSlideCountFn(){
+                cnt--;
+                mainslideFn();
+            }
+
+            $nextBtn.on({
+                click:function(){
+                    nextSlideCountFn();
+                    $content.addClass('addNextActive');
+                }
+            });
+
+            $prevBtn.on({
+                click:function(){
+                    prevSlideCountFn();
+                    
+                }
+            });
 
             $slideContent.on({
                 mouseenter:function(){
