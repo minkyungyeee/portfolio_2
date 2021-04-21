@@ -11,6 +11,8 @@
                 that.section5Fn();
                 that.section6Fn();
                 that.section7Fn();
+                that.section8Fn();
+                that.section9Fn();
                 that.footerFn();
         },
         scrollEventFn:function(){
@@ -286,8 +288,10 @@
             var winH        = $(window).innerHeight();
             var $sec3       = $('#section3');
             var $slide      = $('#section3 .slide');
+            var $slideImgWrap = $('#section3 .slide-img-wrap');
+            var slideImgW = winw;
             var $col        = $('#section3 .col');
-            var $colH       = $(window).innerWidth()/2;
+            var $colW       = winw/2;
             var $nextBtn    = $('#section3 .next-btn');
             var $prevBtn    = $('#section3 .prev-btn');
             var $pageBtn    = $('#section3 .page-btn');
@@ -304,16 +308,18 @@
 
             function resizeFn(){
                 winw = $(window).innerWidth();
-                $colH = $(window).innerWidth()/2;
+                slideImgW = winw;
                 if($(window).innerWidth()>980){
                     winH = $(window).innerHeight();
+                    slideImgW = winw;
                 }
                 else{
                     winH = 700;
+                    slideImgW = winw;
                 }
 
                 $sec3.css({width:winw,height:winH});
-                $col.css({width:$colH,height:winH});
+                $slideImgWrap.css({width:slideImgW,height:winH});
             }
 
             setTimeout(resizeFn,100);
@@ -535,12 +541,79 @@
             });
         },
         section5Fn:function(){
+            var $slide = $('#section5 .slide');
+            var $txtWrap = $('#section5 .txt-wrap');
+            var $timerMoveBtn = $('#section5 .timer-move-btn');
+            var $innerLine = $('#section5 .inner-line');
+
+            var cnt = 0;
+            var n   = $('#section5 .slide').length;
+            var LineW = 0;
+            var setId = null;
+            var setTimeBar = null;
+
+            function mainNextSlideFn(){
+                //console.log(cnt);
+                $slide.stop().hide().animate({opacity:0},0);
+                $txtWrap.stop().hide().animate({opacity:0},0);
+                $slide.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
+                $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
+            }
+
+            // function mainPrevSlideFn(){
+
+            // }
+
+            function nextSlideCountFn(){
+                cnt++;
+                if(cnt>n-1){cnt=0}
+                mainNextSlideFn();
+            }
+
+            // function prevSlideCountFn(){
+            //     if(cnt<0){cnt=n-1}
+            //     mainPrevSlideFn();
+            // }
+
+            $timerMoveBtn.each(function(idx){
+                $(this).on({
+                    click:function(){
+                        cnt = idx;
+                        mainNextSlideFn();
+                        pauseTimerFn();
+                    }
+                });
+            });
+
+            function autoPlayFn(){
+                var w = 0;
+                setId = setInterval(nextSlideCountFn,6000);
+                // setTimeBar = setInterval(function(){
+                //     w ++;
+                //     console.log(w)
+                //     LineW = w*75;
+                //     $innerLine.eq(cnt).css({width:LineW});
+                // },1000);
+            }
+
+            autoPlayFn();
+
+            function pauseTimerFn(){
+                clearInterval(setId);
+                autoPlayFn();
+            }
 
         },
         section6Fn:function(){
 
         },
         section7Fn:function(){
+
+        },
+        section8Fn:function(){
+
+        },
+        section9Fn:function(){
 
         },
         footerFn:function(){
