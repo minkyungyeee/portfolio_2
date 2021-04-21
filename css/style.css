@@ -363,7 +363,34 @@
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line {z-index:2;position:absolute;top:0;left:0;width:0;height:1px;background:#ad7b61;/* transition:all .3s; */}
 
 /* section6 */
-#wrap #main #section6 {}
+#wrap #main #section6 {width:100%;padding-bottom:240px;}
+#wrap #main #section6 .wrap {width:100%;}
+#wrap #main #section6 .wrap .gap {margin:0;}
+#wrap #main #section6 .wrap .gap .container {width:100%;}
+#wrap #main #section6 .wrap .gap .container ul {width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li {float:left;width:50%;box-sizing: border-box;}
+#wrap #main #section6 .wrap .gap .container ul li:nth-of-type(1) .content-gap {margin:0 15px 0 0;}
+#wrap #main #section6 .wrap .gap .container ul li:nth-of-type(2) .content-gap {margin:0 0 0 15px;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap {position:relative;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face {z-index:2;position:relative;width:100%;transform:perspective(1000px) rotateY(0deg);transition:all 1s ease-in-out;backface-visibility:hidden;}/* 원래여기는없음visibility */
+#wrap #main #section6 .wrap .gap .container ul li:hover .content-gap .content-wrap .front-face {z-index:1;backface-visibility:hidden;transform:rotateY(-180deg);}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap {z-index:1;position:relative;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap > img {display:block;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-caption {z-index:2;position:absolute;bottom:40px;left:20px;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-caption h2 {font-size:30px;font-weight:500;}
+
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face {z-index:1;position:absolute;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(to bottom,#111, rgba(255,255,255,.1));transform:perspective(1000px) rotateY(180deg);transition:all 1s ease-in-out;backface-visibility:hidden;}
+#wrap #main #section6 .wrap .gap .container ul li:hover .content-gap .content-wrap .back-face {z-index:2;transform:rotateY(0deg);transition:all 1s ease-in-out;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap {padding:100px;box-sizing: border-box;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content {width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h3 {font-size:30px;font-weight:500;padding-bottom:20px;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content p {width:75%;font-size:15px;line-height:150%;padding-bottom:30px;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 {display:inline-block;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 a {display:inline-block;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 a span:nth-of-type(1) {font-size:15px;font-weight:500;color:#fff;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 a span:nth-of-type(2) {display:block;width:0;height:1px;background:#fff;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 a:hover span:nth-of-type(2) {display:block;width:100%;height:1px;background:#fff;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .back-face .back-gap .back-content h4 a span > span {display:inline-block;width:8px;height:8px;border-top:2px solid #ad7b61;border-right:2px solid #ad7b61;transform:rotate(45deg);}
 
 /* section7 */
 #wrap #main #section7 {}
