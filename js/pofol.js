@@ -627,7 +627,17 @@
 
         },
         section6Fn:function(){
+            var $moreBtn = $('#section6 .more-btn');
 
+            $moreBtn.on({
+                mouseenter:function(){
+                    $moreBtn.removeClass('addUnderLine');
+                    $(this).addClass('addUnderLine');
+                },
+                mouseleave:function(){
+                    $moreBtn.removeClass('addUnderLine');
+                }
+            });
         },
         section7Fn:function(){
 
