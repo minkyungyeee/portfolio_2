@@ -494,22 +494,18 @@
             var cnt = 0;
             var winW = $(window).innerWidth();
             var $content = $('#section4 .content');
-            var contentW = winW-240;
 
-            // function resizeFn(){
-            //     winW = $(window).innerWidth();
-            //     contentW = winW-240;
 
-            //     content.css({width:contentW});
-            // }
-
-            // setTimeout(resizeFn,100);
-
-            // $(window).resize(function(){
-            //     setTimeout(resizeFn,100);
-            // });
             function mainslideFn(){
-                $slideWrap.stop().animate({left:-363.25*cnt},600)
+                if($(window).innerWidth()>1020){
+                    $slideWrap.stop().animate({left:-25*cnt+'%'},600);
+                }
+                else if ($(window).innerWidth()>780){
+                    $slideWrap.stop().animate({left:-33.3333*cnt+'%'},600);
+                }
+                else{
+                    $slideWrap.stop().animate({left:-100*cnt+'%'},600);
+                }
             }
 
             function nextSlideCountFn(){
@@ -560,6 +556,7 @@
             var winW = $(window).innerWidth();
             var $slide = $('#section5 .slide');
             var $img = $('#section5 .slide img');
+            var $slideConTxt = $('#section5 .slide-con-txt');
             var $txtWrap = $('#section5 .txt-wrap');
             var $timerMoveBtn = $('#section5 .timer-move-btn');
             var $innerLine = $('#section5 .inner-line');
@@ -570,10 +567,21 @@
             var setId = null;
             var setTimeBar = null;
 
-            // function resizeFn(){
-            //     winW = $(window).innerWidth();
-            //     $img.css({width:winW});
-            // }
+            function resizeFn(){
+                winW = $(window).innerWidth();
+                if(winW>1020){
+                    $slideConTxt.css({height:winW*0.436941671});
+                }
+                else if (winW>760){
+                    $slideConTxt.css({height:winW*0.5});
+                }
+            }
+
+            setTimeout(resizeFn,100);
+
+            $(window).resize(function(){
+                setTimeout(resizeFn,100);
+            });
 
             function mainNextSlideFn(){
                 //console.log(cnt);
@@ -581,6 +589,7 @@
                 $txtWrap.stop().hide().animate({opacity:0},0);
                 $slide.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
                 $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
+
             }
 
             // function mainPrevSlideFn(){
@@ -607,7 +616,9 @@
                     }
                 });
             });
+            // $innerLine.each(function(idx){
 
+            // });
             function autoPlayFn(){
                 var w = 0;
                 setId = setInterval(nextSlideCountFn,6000);
