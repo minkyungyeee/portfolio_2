@@ -165,7 +165,7 @@
 #wrap #main #section2 .wrap .gap .container .content label {cursor:pointer;color:#fff;} */
 
 #wrap #main #section2 .wrap .gap .container .content .cube {position:relative;width:350px;height:350px;margin:100px auto;transform-style: preserve-3d;transform:perspective(1000px) rotate3d(0,0,0,0deg);transition:all 1s;}
-#wrap #main #section2 .wrap .gap .container .content .cube.addAuto {position:relative;width:350px;height:350px;margin:100px auto;transform-style: preserve-3d;transform:perspective(1000px) rotate3d(0,1,1,360deg);animation:cube 3s infinite;}
+#wrap #main #section2 .wrap .gap .container .content .cube.addAuto {position:relative;width:350px;height:350px;margin:100px auto;transform-style: preserve-3d;transform:perspective(1000px) rotate3d(0,1,1,360deg);animation:cube 3s infinite linear;}
 @keyframes cube {
     0%  {transform:perspective(1000px) rotate3d(0,1,1,0deg);}
     25% {transform:perspective(1000px) rotate3d(0,1,1,90deg);}
@@ -263,7 +263,7 @@
 /* section3_slide_sns-move-btn */
 /* #wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap {} */
 #wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap .sns-bg {z-index:1;position:absolute;bottom:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0);visibility: hidden;transition:all .6s;}
-#wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap.addSnsActive .sns-bg {z-index:2;background:rgba(0,0,0,.5);visibility: visible;}
+#wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap.addSnsActive .sns-bg {z-index:2;background:rgba(0,0,0,.7);visibility: visible;}
 /* #wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap .sns-btn-container {} */
 #wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap .sns-btn-container .active-btn {z-index:2;position:absolute;bottom:6%;right:2%;width:40px;height:40px;background:#111;border-radius:50%;text-align:center;opacity:1;transition:all .6s;}
 #wrap #main #section3 .wrap .gap .container .slide-container .sns-btn-wrap.addSnsActive .sns-btn-container .active-btn {z-index:1;opacity:0;}
@@ -348,6 +348,7 @@
 
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content {z-index:2;position:absolute;top:0;left:0;width:100%;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-con-txt {position:relative;max-width:1840px;margin:0 auto;width:100%;height:831.5px;}/* 831.5px 43.6941671%*/
+/* #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-con-txt::after {z-index:3;position:absolute;content:'';display:block;top:50%;bottom:0;left:0;width:100%;background-image:linear-gradient(to bottom, transparent, rgba(17, 17, 17, 0.35))} */
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-con-txt .txt-gap {margin:0;width:100%;height:100%;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-con-txt .txt-gap .txt-wrap {position:absolute;bottom:0;left:0;width:37.8349974%;padding:0 100px 74px;}/* 720px */
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-con-txt .txt-gap .txt-wrap.txt0 {display:block;opacity:1;}
@@ -365,6 +366,7 @@
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn {position:relative;display:block;width:100%;padding:17px 0;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .text {width:85%;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .text .text-pc {color:#fff;font-size:15px;font-weight:400;text-transform: uppercase;}
+#wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn.addSlideActive .text .text-pc {color:#ad7b61;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line {z-index:1;position:absolute;top:0;left:0;width:100%;height:1px;background:rgba(255, 255, 255, 0.3);}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line {z-index:2;position:absolute;top:0;left:0;width:0;height:0px;background:#ad7b61;/* transition:all .3s; */}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line.addAutoTimer {height:1px;}
@@ -383,7 +385,8 @@
 #wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face::before {z-index:3;position:absolute;content:'';display:block;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);}
 #wrap #main #section6 .wrap .gap .container ul li:hover .content-gap .content-wrap .front-face {z-index:1;/* backface-visibility:hidden; */transform:rotateY(-180deg);}
 #wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap {z-index:1;position:relative;width:100%;}
-#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap > img {display:block;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap > img.pc-img {display:block;width:100%;}
+#wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-wrap > img.mobile-img {display:none;}
 /* #wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-caption {z-index:2;position:absolute;bottom:40px;left:20px;width:100%;}
 #wrap #main #section6 .wrap .gap .container ul li .content-gap .content-wrap .front-face .img-caption h2 {font-size:30px;font-weight:500;} */
 

@@ -590,6 +590,9 @@
                 $slide.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
                 $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
 
+                $timerMoveBtn.removeClass('addSlideActive');
+                $timerMoveBtn.eq(cnt).addClass('addSlideActive');
+
             }
 
             // function mainPrevSlideFn(){
@@ -613,6 +616,7 @@
                         cnt = idx;
                         mainNextSlideFn();
                         pauseTimerFn();
+                        $(this).addClass('addSlideActive');
                     }
                 });
             });
