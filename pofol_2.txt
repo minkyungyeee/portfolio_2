@@ -35,7 +35,7 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 	자세히보기 버튼 마우스오버시 위로올라오는효과
 반응형:    780px 3d박스크기 줄이기, 회전버튼 상단에배치
 
-진행상황;;; 780이하 버튼 위치 다시 고민 정하기, 글씨 왔다갔다하는거 반응형 어떻게 처리할지 결정 
+진행상황;;; 반응형까지 완성 @@@@
 
 섹션3 그냥 원래 페이지그대로 구현 (슬라이드) .. section3완성하면 section2번 반응형진행하기
 내용:
@@ -43,8 +43,7 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 이벤트:	
 반응형:
 
-진행상황;;; 반응형 이미지 제대로 반응안함 어떻게 해결할 것인가?
-			반응형 진행될때 이미지사이에 선 생김
+진행상황;;; 반응형까지 완성 @@@@
 
 섹션4(3d롤링슬라이드)
 내용:제네시스 시리즈;
@@ -61,6 +60,9 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 	페이지네이션 시간에 맞춰서 색이 차오르게,
 	스크롤시 텍스트박스 위로 올라오게
 
+진행상황;;; timer progress bar 구현, 모바일에서 스와이프기능추가
+
+
 섹션6(2d로테이트)
 내용: 제네시스 공간소개
 구성: 박스크게 두개 앞면에는 사진만 넣고, 뒷면에 텍스트와 자세히보기 버튼추가
@@ -69,8 +71,16 @@ https://www.genesis.com/kr/ko/models/luxury-sedan-genesis/g80/highlights.html
 	780px; 박스하나씩
 이벤트: 스크롤이벤트 박스가 왼쪽에서 나오는거처럼
 
+진행상황;; 패러록스빼고 완성
+
+
 섹션7(이벤트) _이거를 슬라이드 형식
 ㅂ조각슬라이드로 구현하기
+
+진행상황;; 780px (원사이트는760px)에서 반응형, jquery 페러록스
+
+섹션8 
+
 
 footer
 홈페이지내용 구현하기
