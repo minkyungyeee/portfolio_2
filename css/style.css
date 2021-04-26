@@ -521,21 +521,22 @@
 /* 모든칸의 호버info배치는같음 */
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info {position:absolute;z-index:1;display:none;bottom:0;left:0;width:100%;}
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link.addMouseOn .item-info {z-index:2;display:block;}
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap {padding:20px 20px 40px 20px;box-sizing: border-box;width:100%;height:100%;}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap {padding:20px 20px 40px 20px;box-sizing: border-box;width:100%;height:100%;}/* 20px 20px 40px 20px */
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap {position:relative;width:100%;color:#fff;}
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .sns-icon {position:absolute;display:block;top:0;left:0;width:5%;height:100%;}
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .sns-icon > span {display:block;}
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .sns-icon > span > i {font-size:30px;}
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt {width:90%;padding-left:7%;/* display:-webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp: 2;white-space: nowrap; */}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt {width:90%;padding-left:40px/* 7% */;/* display:-webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp: 2;white-space: nowrap; */}
 #wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt p {font-size:13px;font-weight:500;line-height:140%;padding-bottom:10px;}
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more {font-size:14px;font-weight:500;padding-bottom:3px;/* border-bottom:2px solid #fff; */}
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more::after {content:'';display:block;width:13%;height:2px;background:#fff;}
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt:hover .see-more::after {width:13%;height:2px;background:#fff;animation:underL .6s;}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more {display:inline-block;/* font-size:14px;font-weight:500; */}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more > span {display:inline-block;font-size:14px;font-weight:500;/* padding-bottom:3px; *//* border-bottom:2px solid #fff; */}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more > span::after {margin-top:3px;content:'';display:block;width:100%;height:2px;background:#fff;}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more:hover > span::after {width:100%;height:2px;background:#fff;animation:underL .6s;}
 @keyframes underL {
     0%{width:0;}
-    100%{width:13%;}
+    100%{width:100%;}
 }
-#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more > i {padding-left:10px;}
+#wrap #main #section8 .wrap .gap .container .content .social-feed .social-feed-list .social-feed-item .item-gap .social-link .item-info .info-gap .info-wrap .info-txt .see-more i {padding-left:5px;font-size:13px;margin-top:-3px;}
 /* section8_more_btn */
 #wrap #main #section8 .wrap .gap .container .btn-box {width:100%;text-align:center;padding-top:70px;}
 #wrap #main #section8 .wrap .gap .container.addMoreActive2 .btn-box {display:none;}
@@ -578,3 +579,104 @@
 
 /* footer */
 #wrap #footer {z-index:1;position:relative;}
+#wrap #footer .wrap {}
+#wrap #footer .wrap .gap {}
+#wrap #footer .wrap .gap .container {}
+/* footer_move-box(가장상단) */
+#wrap #footer .wrap .gap .container .site-footer-move {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .footer-sns {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .footer-sns > ul {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .footer-sns > ul > li {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .footer-sns > ul > li > span {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .footer-sns > ul > li > span > i{}
+/* footer_move-box(가장상단)_page-go-top-btn */
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .go-top-box {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .go-top-box .go-top-btn {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .go-top-box .go-top-btn > span {}
+#wrap #footer .wrap .gap .container .site-footer-move .move-inner .go-top-box .go-top-btn .arrow {}
+
+/* footer_notice(슬라이드) */
+#wrap #footer .wrap .gap .container .site-footer-notice {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul .notice {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul .notice .notice-box {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul .notice .notice-box .notice-btn {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul .notice .notice-box .notice-btn > span {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .ooter-notice-slide > ul .notice .notice-box .notice-btn p {}
+/* footer_notice(슬라이드)_move-btn */
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .prev-btn {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .prev-btn::after {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .pause {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .pause::after {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .play {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .play::after {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .next-btn {}
+#wrap #footer .wrap .gap .container .site-footer-notice .notice-inner .footer-notice-btn .next-btn::after {}
+
+
+/* footer-site-map */
+#wrap #footer .wrap .gap .container .site-footer-top {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap .content-wrap {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap .content-wrap > strong {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap .content-wrap > ul {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap .content-wrap > ul .menu-move {}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wra > ul .top-content .content-gap .content-wrap > ul .menu-move .menu-btn {}
+
+
+
+/* footer-policy_ family-site_copyrights */
+#wrap #footer .wrap .gap .container .site-footer-bottom {}
+/* footer-policy */
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .left-row {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .left-row > ul {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .left-row > ul .row-move {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .left-row > ul .row-move .bottom-notice-btn {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .right-row {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .right-row > ul {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .right-row > ul .row-sns {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .right-row > ul .row-sns .bottom-sns-btn {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-policy .row-gap .row-wrap .right-row > ul .row-sns .bottom-sns-btn i {}
+
+/* footer-family-site */
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site .family-site-btn {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site.site1 .family-site-btn::before {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site.site2 .family-site-btn::before {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site.site3 .family-site-btn::before {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site.site4 .family-site-btn::before {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site.site5 .family-site-btn::before {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .left-row > ul .family-site .family-site-btn > span {}
+/* footer-family-site_language */
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .right-row {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .right-row .language-box {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .right-row .language-box .lan-btn {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-site-map .row-gap .row-wrap .right-row .language-box .lan-btn span {}
+
+/* footer-pcopyrights */
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap .logo {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap .logo > span {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap .logo > span img{}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap .copyright-txt {}
+#wrap #footer .wrap .gap .container .site-footer-bottom .row-copyrights .bottom-copy-inner .copy-gap .copy-wrap .copyright-txt p {}
