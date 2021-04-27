@@ -783,6 +783,7 @@
             var $prevBtn = $('#footer .prev-btn');
             var $play = $('#footer .play');
             var $pause = $('#footer .pause');
+            var $footerMobileBtn = $('#footer .footer-mobile-btn');
 
             var n = $('#footer .notice').length; //5
             var cnt = 0;
@@ -811,7 +812,12 @@
                 }
 
                 for(var i=0;i<n;i++){
-                    $notice.eq(next[i]).stop().animate({top:77*i},0).animate({top:77*(i-1)},800);
+                    if($(window).innerWidth()>1020){
+                        $notice.eq(next[i]).stop().animate({top:77*i},0).animate({top:77*(i-1)},800);
+                    }
+                    else {
+                        $notice.eq(next[i]).stop().animate({top:73*i},0).animate({top:73*(i-1)},800);
+                    }
                 }
             }
 
@@ -831,7 +837,12 @@
                 //console.log(prev)
 
                 for(var i=0;i<n;i++){ //i 0,1,2,3,4
-                    $notice.eq(prev[i]).stop().animate({top:77*(i*-1)},0).animate({top:77*((i*-1)+1)},800);
+                    if($(window).innerWidth()>1020){
+                        $notice.eq(prev[i]).stop().animate({top:77*(i*-1)},0).animate({top:77*((i*-1)+1)},800);
+                    }
+                    else {
+                        $notice.eq(prev[i]).stop().animate({top:73*(i*-1)},0).animate({top:73*((i*-1)+1)},800);
+                    }
                 }
             }
 
@@ -907,6 +918,22 @@
                     }
                 },1000)
             }
+
+            $footerMobileBtn.each(function(idx){
+                $(this).on({
+                    click:function(e){
+                        e.preventDefault();
+
+                        $footerMobileBtn.next().stop().slideUp(300);
+                        if($footerMobileBtn.eq(idx).parent().hasClass('addSubMenu')==false){
+                            $footerMobileBtn.parent().removeClass('addSubMenu');
+                        }
+                        
+                        $(this).parent().toggleClass('addSubMenu');
+                        $(this).next().stop().slideToggle(600);
+                    }
+                })
+            });
         }
     }
     pofol.init();

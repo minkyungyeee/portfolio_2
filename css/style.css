@@ -641,6 +641,7 @@
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > strong {font-size:16px;font-weight:500;line-height:120%;color:#fff;}
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > strong > a {font-size:16px;font-weight:500;line-height:120%;color:#fff;transition:all .3s;}
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > strong > a:hover {color:#ad7b61;}
+#wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap .footer-mobile-btn {display:none;font-size:16px;font-weight:500;line-height:120%;color:#fff;}
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > ul {margin-top:21px;width:100%;}
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > ul .menu-move {margin-top:18px;width:100%;}
 #wrap #footer .wrap .gap .container .site-footer-top .footer-top-inner .top-gap .top-wrap > ul .top-content .content-gap .content-wrap > ul .menu-move .menu-btn {display:block;font-size:14px;line-height:160%;color:#ccc;transition:all .3s;}
