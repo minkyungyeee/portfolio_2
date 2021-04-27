@@ -776,7 +776,137 @@
 
         },
         footerFn:function(){
+            var $goTopBtn = $('#footer .go-top-btn');
+            var $htmlBody = $('html,body');
+            var $notice = $('#footer .notice');
+            var $nextBtn = $('#footer .next-btn');
+            var $prevBtn = $('#footer .prev-btn');
+            var $play = $('#footer .play');
+            var $pause = $('#footer .pause');
 
+            var n = $('#footer .notice').length; //5
+            var cnt = 0;
+            var next = [4,0,1,2,3];
+            var prev = [0,4,3,2,1];
+            var setId = null;
+            var setId2 = null;
+
+            $goTopBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $htmlBody.stop().animate({scrollTop:0},1000,'easeInOutExpo')
+                }
+            });
+
+            function mainNextSlideFn(){
+                for(var i=0;i<n;i++){
+                    next[i] = i;
+                } //next[0,1,2,3,4]
+                var imsi = next.pop();
+                    next.unshift(imsi); //next[4,0,1,2,3]
+
+                for(var i=0;i<cnt;i++){
+                    var imsi = next.shift();
+                        next.push(imsi);
+                }
+
+                for(var i=0;i<n;i++){
+                    $notice.eq(next[i]).stop().animate({top:77*i},0).animate({top:77*(i-1)},800);
+                }
+            }
+
+            function mainPrevSlideFn(){
+                var j = n;
+                for(var i=0;i<n;i++){
+                    j--;
+                    prev[i]=j; //4,3,2,1,0
+                }
+                var imsi = prev.pop();
+                    prev.unshift(imsi); //prev[0,4,3,2,1]
+
+                for(var i=n-1;i>cnt;i--){
+                    var imsi = prev.shift();
+                        prev.push(imsi);
+                }
+                //console.log(prev)
+
+                for(var i=0;i<n;i++){ //i 0,1,2,3,4
+                    $notice.eq(prev[i]).stop().animate({top:77*(i*-1)},0).animate({top:77*((i*-1)+1)},800);
+                }
+            }
+
+            function nextSlideCountFn(){
+                cnt++;
+                if(cnt>n-1){cnt=0}
+                mainNextSlideFn();
+            }
+
+            function prevSlideCountFn(){
+                cnt--;
+                if(cnt<0){cnt=n-1}
+                mainPrevSlideFn();
+            }
+
+            $nextBtn.on({
+                click:function(){
+                    pauseTimerFn();
+                    if(!$notice.is(':animated')){
+                        nextSlideCountFn();
+                    }
+                    if($(this).parent().hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                    }
+                }
+            });
+
+            $prevBtn.on({
+                click:function(){
+                    pauseTimerFn();
+                    if(!$notice.is(':animated')){
+                        prevSlideCountFn();
+                    }
+                    if($(this).parent().hasClass('addPauseActive')==true){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                    }
+                }
+            });
+
+            $pause.on({
+                click:function(){
+                    $(this).parent().addClass('addPauseActive');
+                    clearInterval(setId);
+                    clearInterval(setId2);
+                }
+            });
+            $play.on({
+                click:function(){
+                    $(this).parent().removeClass('addPauseActive');
+                    autoPlay();
+                }
+            });
+
+            function autoPlay(){
+                setId = setInterval(nextSlideCountFn,4000);
+            }
+            autoPlay();
+
+            function pauseTimerFn(){
+                var t = 0;
+                clearInterval(setId);
+                clearInterval(setId2);
+                setId2 = setInterval(function(){
+                    t ++;
+                    if(t>4){
+                        clearInterval(setId);
+                        clearInterval(setId2);
+                        t = 0 ;
+                        nextSlideCountFn();
+                        autoPlay();
+                    }
+                },1000)
+            }
         }
     }
     pofol.init();

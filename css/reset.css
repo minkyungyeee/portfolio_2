@@ -16,4 +16,4 @@ a:hover {outline:0;}
 a:focus {outline:0;}
 table {border-collapse:collapse;}
 header,main,section,footer,nav {display:block;}
-
+button {all:unset;outline:0;appearance:none;background:none;border-radius:0;}

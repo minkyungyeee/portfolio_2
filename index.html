@@ -1248,19 +1248,18 @@
             <div class="gap">
                 <div class="container">
                     <div class="site-footer-move">
-                        <div class="move-inner">
+                        <div class="move-inner clearfix">
                             <div class="footer-sns">
                                 <ul class="clearfix">
                                     <li><span>Share</span></li>
-                                    <li><span><i class="fab fa-facebook-f"></i></span></li>
-                                    <li><span><i class="fab fa-twitter"></i></span></li>
-                                    <li><span><i class="fas fa-bookmark"></i></span></li>
+                                    <li><a href="javascript:" class="top-sns"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="javascript:" class="top-sns"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="javascript:" class="top-sns"><i class="fas fa-bookmark"></i></a></li>
                                 </ul>
                             </div>
                             <div class="go-top-box">
                                 <a href="javascript:" class="go-top-btn">
                                     <span>Top</span>
-                                    <span class="arrow"></span>
                                 </a>
                             </div>
                         </div>
@@ -1269,14 +1268,14 @@
                         <div class="notice-inner">
                             <div class="footer-notice-slide">
                                 <ul><!-- 0,1,2,3,4  총 5갠데 앞뒤로 한개씩추가 =7개-->
-                                    <li class="notice notice4">
+<!--                                     <li class="notice notice4">
                                         <div class="notice-box">
                                             <a href="javascript:" class="notice-btn">
                                                 <span>[공지사항]</span>
                                                 <p>GENESIS CONNECTED SERVICES 서비스 일시 중지 안내</p>
                                             </a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="notice notice0">
                                         <div class="notice-box">
                                             <a href="javascript:" class="notice-btn">
@@ -1317,21 +1316,21 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="notice notice0">
+<!--                                     <li class="notice notice0">
                                         <div class="notice-box">
                                             <a href="javascript:" class="notice-btn">
                                                 <span>[공지사항]</span>
                                                 <p>제네시스 멤버십 법인 회원 포인트 제도 변경 안내</p>
                                             </a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <div class="footer-notice-btn"> <!-- after로 bg로 버튼작성 -->
-                                <button class="btn-control prev-btn"><span class="blind">이전</span></button>
-                                <button class="btn-control pause"><span class="blind">일시정지</span></button>
-                                <button class="btn-control play"><span class="blind">재생</span></button>
-                                <button class="btn-control next-btn"><span class="blind">다음</span></button>
+                                <button class="btn-control prev-btn"><span class="hide">이전</span></button>
+                                <button class="btn-control pause"><span class="hide">일시정지</span></button>
+                                <button class="btn-control play"><span class="hide">재생</span></button>
+                                <button class="btn-control next-btn"><span class="hide">다음</span></button>
                             </div>
                         </div>
                     </div>
@@ -1436,80 +1435,81 @@
                         </div>
                     </div>
                     <div class="site-footer-bottom">
-                        <div class="bottom row-policy">
-                            <div class="row-gap">
-                                <div class="row-wrap">
-                                    <div class="left-row">
-                                        <ul class="clearfix">
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">사이트맵</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">이용약관</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">개인정보 처리방침</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">저작권 안내</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">보증안내</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">자동차 교환 및 환불 중재 규정 안내</a>
-                                            </li>
-                                            <li class="row-move">
-                                                <a href="javascript:" class="bottom-notice-btn">하자 재발 통보 안내</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="right-row">
-                                        <ul class="clearfix">
-                                            <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-instagram"></i></a></li>
-                                            <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-youtube"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bottom row-site-map">
-                            <div class="row-gap">
-                                <div class="row-wrap">
-                                    <div class="left-row">
-                                        <ul class="clearfix"><!-- a before bg로 아이콘삽입 -->
-                                            <li class="family-site site1"><a href="javascript" class="family-site-btn"><span>제네시스 챔피언십</span></a></li>
-                                            <li class="family-site site2"><a href="javascript" class="family-site-btn"><span>제네시스 멤버스 몰</span></a></li>
-                                            <li class="family-site site3"><a href="javascript" class="family-site-btn"><span>내비게이션 업데이트</span></a></li>
-                                            <li class="family-site site4"><a href="javascript" class="family-site-btn"><span>제네시스 드라이빙 아카데미</span></a></li>
-                                            <li class="family-site site5"><a href="javascript" class="family-site-btn"><span>제네시스 월드와이드</span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="right-row">
-                                        <div class="language-box english-box">
-                                            <a href="javascript:" class="lan-btn eng-btn">
-                                                <span>ENG</span>
-                                            </a>
+                        <div class="footer-bottom-inner">
+                            <div class="bottom row-policy">
+                                <div class="row-gap">
+                                    <div class="row-wrap clearfix">
+                                        <div class="left-row">
+                                            <ul class="clearfix">
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">사이트맵</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">이용약관</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">개인정보 처리방침</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">저작권 안내</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">보증안내</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">자동차 교환 및 환불 중재 규정 안내</a>
+                                                </li>
+                                                <li class="row-move">
+                                                    <a href="javascript:" class="bottom-notice-btn">하자 재발 통보 안내</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="language-box korean-box">
-                                            <a href="javascript:" class="lan-btn kor-btn">
-                                                <span>KOR</span>
-                                            </a>
+                                        <div class="right-row">
+                                            <ul class="clearfix">
+                                                <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-instagram"></i></a></li>
+                                                <li class="row-sns"><a href="javascript:" class="bottom-sns-btn"><i class="fab fa-youtube"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="bottom row-copyrights">
-                            <div class="bottom-copy-inner">
-                                <div class="copy-gap">
-                                    <div class="copy-wrap">
-                                        <div class="logo">
-                                            <span><img src="./img/footer-logo.png" alt="logo"></span>
+                            <div class="bottom row-site-map">
+                                <div class="row-gap">
+                                    <div class="row-wrap clearfix">
+                                        <div class="left-row">
+                                            <ul class="clearfix"><!-- a before bg로 아이콘삽입 -->
+                                                <li class="family-site site1"><a href="javascript" class="family-site-btn"><span>제네시스 챔피언십</span></a></li>
+                                                <li class="family-site site2"><a href="javascript" class="family-site-btn"><span>제네시스 멤버스 몰</span></a></li>
+                                                <li class="family-site site3"><a href="javascript" class="family-site-btn"><span>내비게이션 업데이트</span></a></li>
+                                                <li class="family-site site4"><a href="javascript" class="family-site-btn"><span>제네시스 드라이빙 아카데미</span></a></li>
+                                                <li class="family-site site5"><a href="javascript" class="family-site-btn"><span>제네시스 월드와이드</span></a></li>
+                                            </ul>
                                         </div>
-                                        <div class="copyright-txt">
-                                            <p>© Copyright 2021 Hyundai Motor Company.<br>All Rights Reserved.</p>
+                                        <div class="right-row">
+                                            <div class="language-box english-box">
+                                                <a href="javascript:" class="lan-btn eng-btn">
+                                                    <span>ENG</span>
+                                                </a>
+                                            </div><div class="language-box korean-box">
+                                                <a href="javascript:" class="lan-btn kor-btn">
+                                                    <span>KOR</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom row-copyrights">
+                                <div class="bottom-copy-inner">
+                                    <div class="copy-gap">
+                                        <div class="copy-wrap">
+                                            <div class="logo">
+                                                <span><img src="./img/footer-logo.png" alt="logo"></span>
+                                            </div>
+                                            <div class="copyright-txt">
+                                                <p>© Copyright 2021 Hyundai Motor Company.<br>All Rights Reserved.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
