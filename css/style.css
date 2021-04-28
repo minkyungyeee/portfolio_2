@@ -25,6 +25,37 @@
 #wrap #header .wrap .gap .container #nav > ul > li .main-btn {display:block;width:100%;color:#fff;font-size:15px;font-weight:500;line-height:70px;transition:all .6s;}
 #wrap #header .wrap .gap .container #nav > ul > li .main-btn:hover {color:#ad7b61;}
 
+/* header_nav_sub_menu */
+/* main-btn1 _ sub */
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 {z-index:30;position:absolute;top:70px;left:0;width:100%;display:block;background:#151515;}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-name {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-name h4 {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-name span {}
+
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-img {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-img img {}
+
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-btn-box {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-btn-box .model-btn {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-btn-box .model-btn .before {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-btn-box .model-btn .after {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-btn-box .model-btn .after > span {}
+
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-link {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-link .link-box {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-link .link-box .link-btn {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-link .link-box .link-btn span {}
+#wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap > ul li.depth2 .depth2-gap .depth2-wrap .depth2-layout .depth2-content .model-link .link-box .link-btn span::after {}
+
+
+
 /* header_aside */
 #wrap #header .wrap .gap .container #aside {float:right;}
 #wrap #header .wrap .gap .container #aside > ul {width:100%;}
@@ -371,7 +402,7 @@
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn.addSlideActive .text .text-pc {color:#ad7b61;}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line {z-index:1;position:absolute;top:0;left:0;width:100%;height:1px;background:rgba(255, 255, 255, 0.3);}
 #wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line {z-index:2;position:absolute;top:0;left:0;width:0;height:0px;background:#ad7b61;/* transition:all .3s; */}
-#wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line.addAutoTimer {height:1px;width:100%;animation:autoLine .6s;}
+#wrap #main #section5 .wrap .gap .container .slide-container .slide-view .slide-content .slide-timer-box .timer-gap .timer-wrap .timer-swipe .timer-move-btn .line .inner-line.addAutoTimer {height:1px;width:100%;animation:autoLine 6s;}
 @keyframes autoLine {
     0%{width:0;height:0px;}
     100%{height:1px;width:100%;}
@@ -558,14 +589,14 @@
 #wrap #main #section9 .wrap .gap {margin:0 140px;}
 #wrap #main #section9 .wrap .gap .container {width:100%;}
 /* section9_title */
-#wrap #main #section9 .wrap .gap .container .title {width:100%;text-align:center;padding-bottom:70px;opacity:0;}
-#wrap #main #section9.addScroll .wrap .gap .container .title {opacity:1;}
+#wrap #main #section9 .wrap .gap .container .title {width:100%;text-align:center;padding-bottom:70px;opacity:0;transition:all .6s;}
+#wrap #main #section9 .wrap .gap .container .title.addScroll {opacity:1;}
 #wrap #main #section9 .wrap .gap .container .title h2 {font-size:30px;font-weight:500;color:#111;}
 /* section9_content */
 #wrap #main #section9 .wrap .gap .container .content {width:100%;}
 #wrap #main #section9 .wrap .gap .container .content ul {width:100%;overflow:hidden;}
-#wrap #main #section9 .wrap .gap .container .content ul .content-box {float:left;width:33.33333%;}
-#wrap #main #section9.addScroll .wrap .gap .container .content ul .content-box {}
+#wrap #main #section9 .wrap .gap .container .content ul .content-box {float:left;width:33.33333%;position:relative;top:969px;opacity:0;transition:all 1s;}
+#wrap #main #section9 .wrap .gap .container .content ul .content-box.addScroll {top:0;}
 #wrap #main #section9 .wrap .gap .container .content ul .content-box .content-gap {padding:0 20px;width:100%;box-sizing: border-box;}
 #wrap #main #section9 .wrap .gap .container .content ul .content-box .content-gap .content-wrap {width:100%;}
 #wrap #main #section9 .wrap .gap .container .content ul .content-box .content-gap .content-wrap .top-box {width:100%;}
