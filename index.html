@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"> <!-- addSub -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,12 +29,17 @@
 </head>
 <body>
 <ul id="skip"> <!-- 완성되면 바로가기이름들 바꾸기 -->
-    <li><a href="#">메뉴바로가기</a></li>
-    <li><a href="#">section1바로가기</a></li>
-    <li><a href="#">section2바로가기</a></li>
-    <li><a href="#">section3바로가기</a></li>
-    <li><a href="#">section4바로가기</a></li>
-    <li><a href="#">section5바로가기</a></li>
+    <li><a href="#header">메뉴바로가기</a></li>
+    <li><a href="#section1">section1바로가기</a></li>
+    <li><a href="#section2">section2바로가기</a></li>
+    <li><a href="#section3">section3바로가기</a></li>
+    <li><a href="#section4">section4바로가기</a></li>
+    <li><a href="#section5">section5바로가기</a></li>
+    <li><a href="#section6">section6바로가기</a></li>
+    <li><a href="#section7">section7바로가기</a></li>
+    <li><a href="#section8">section8바로가기</a></li>
+    <li><a href="#section9">section9바로가기</a></li>
+    <li><a href="#footer">footer바로가기</a></li>
 </ul>
 <div id="wrap">
     <!-- header start -->
@@ -43,7 +48,7 @@
             <div class="gap">
                 <div class="container clearfix">
                     <h1 id="logo">
-                        <a href="#" class="logo"><img src="./img/GENESIS LOGO_3.png" alt="logo"></a>
+                        <a href="#" class="logo" title="logo"><img src="./img/genesis_logo_3.png" alt="logo"></a>
                     </h1>
                     <nav id="nav">
                         <ul class="clearfix">
@@ -57,8 +62,8 @@
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4 class="hide">#</h4>
-                                                                <span>G70</span>
+                                                                <span class="blind">#</span>
+                                                                <h3>G70</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -88,14 +93,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="depth2">
+                                            </li><li class="depth2">
                                                 <div class="depth2-gap">
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4 class="hide">#</h4>
-                                                                <span>G80</span>
+                                                                <span class="blind">#</span>
+                                                                <h3>G80</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -125,14 +129,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="depth2">
+                                            </li><li class="depth2">
                                                 <div class="depth2-gap">
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4>ELECTRIFIED</h4>
-                                                                <span>G80</span>
+                                                                <span>ELECTRIFIED</span>
+                                                                <h3>G80</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -150,14 +153,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="depth2">
+                                            </li><li class="depth2">
                                                 <div class="depth2-gap">
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4 class="hide">#</h4>
-                                                                <span>G90</span>
+                                                                <span class="blind">#</span>
+                                                                <h3>G90</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -187,14 +189,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="depth2">
+                                            </li><li class="depth2">
                                                 <div class="depth2-gap">
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4 class="hide">#</h4>
-                                                                <span>GV70</span>
+                                                                <span class="blind">#</span>
+                                                                <h3>GV70</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -224,14 +225,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </li>
-                                            <li class="depth2">
+                                            </li><li class="depth2">
                                                 <div class="depth2-gap">
                                                     <div class="depth2-wrap">
                                                         <div class="depth2-layout">
                                                             <div class="depth2-name">
-                                                                <h4 class="hide">#</h4>
-                                                                <span>GV80</span>
+                                                                <span class="blind">#</span>
+                                                                <h3>GV80</h3>
                                                             </div>
                                                             <div class="depth2-content">
                                                                 <div class="model-img">
@@ -294,23 +294,19 @@
                                                                     <a href="javascript:" class="depth3-btn">구매 프로모션</a>
                                                                 </li>
                                                             </ul>
-                                                        </li>
-                                                        <li class="depth2-menu">
+                                                        </li><li class="depth2-menu">
                                                             <div class="depth2-title">
                                                                 <span><a href="javascript:">제네시스 스펙트럼</a></span>
                                                             </div>
-                                                        </li>
-                                                        <li class="depth2-menu">
+                                                        </li><li class="depth2-menu">
                                                             <div class="depth2-title">
                                                                 <span><a href="javascript:">견적내기</a></span>
                                                             </div>
-                                                        </li>
-                                                        <li class="depth2-menu">
+                                                        </li><li class="depth2-menu">
                                                             <div class="depth2-title">
                                                                 <span><a href="javascript:">구매 상담 신청</a></span>
                                                             </div>
-                                                        </li>
-                                                        <li class="depth2-menu">
+                                                        </li><li class="depth2-menu">
                                                             <div class="depth2-title">
                                                                 <span><a href="javascript:">사양 조회하기</a></span>
                                                             </div>
@@ -363,12 +359,396 @@
                             </li>
                             <li>
                                 <a href="javascript:" class="main-btn">체험</a>
+                                <div class="sub sub3">
+                                    <div class="sub-gap">
+                                        <div class="sub-wrap">
+                                            <div class="depth2-inner-top">
+                                                <div class="depth2-info-box">
+                                                    <div class="info-title">
+                                                        <strong>체험</strong>
+                                                    </div>
+                                                    <div class="info-txt">
+                                                        <p>제네시스가 담아 낸 브랜드의 이상과 가치를 미리 경험할 수 있습니다.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="depth2-menu-box">
+                                                    <ul class="depth2-menu-inner clearfix">
+                                                        <li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">스페이스</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">스페이스 소개</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">스튜디오 하남</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">스튜디오 안성</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">강남</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">수지</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">시승 신청</a></span>
+                                                            </div>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">전시장 찾기</a></span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="depth2-promotion-box">
+                                                    <div class="pr-view-box">
+                                                        <div class="pr-img-box">
+                                                            <div class="pr-img"></div>
+                                                        </div>
+                                                        <div class="pr-btn-box">
+                                                            <a href="javascript:" class="pr-btn">
+                                                                <span class="before">시승 신청</span>
+                                                                <span class="after">
+                                                                    <span>시승 신청</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pr-txt-box">
+                                                        <p>가까운 시승 센터에서 제네시스의 디자인과 기술력을 체험해보세요.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="depth2-inner-bottom">
+                                                <div class="bottom-gap">
+                                                    <div class="bottom-wrap">
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">견적 내기</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">구매 상담 신청</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">서비스 네트워크 찾기</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">제네시스 드라이빙 아카데미</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <a href="javascript:" class="main-btn">멤버스</a>
+                                <div class="sub sub4">
+                                    <div class="sub-gap">
+                                        <div class="sub-wrap">
+                                            <div class="depth2-inner-top">
+                                                <div class="depth2-info-box">
+                                                    <div class="info-title">
+                                                        <strong>멤버스</strong>
+                                                    </div>
+                                                    <div class="info-txt">
+                                                        <p>제네시스를 선택한 순간 당신의 일상은 특별해집니다.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="depth2-menu-box">
+                                                    <ul class="depth2-menu-inner clearfix">
+                                                        <li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">제네시스 멤버십</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">멤버십 소개</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">모빌리티 케어</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">프리빌리지</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">모먼츠</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">제네시스 커넥티드 서비스</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">소개 및 가입안내</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">주요 서비스</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">고객센터 및 A/S안내</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">디지털 서비스</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">서비스 안내</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">마이 제네시스 앱</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">디지털 키</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">카페이</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">빌트인 캠</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">카투홈/홈투카</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">차량관리 서비스</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">서비스 네트워크 찾기</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">호환성 안내</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">자동차 교환∙환불 중재 규정 안내</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">하자 재발 통보 안내</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="depth2-promotion-box">
+                                                    <div class="pr-view-box">
+                                                        <div class="pr-img-box">
+                                                            <div class="pr-img"></div>
+                                                        </div>
+                                                        <div class="pr-btn-box">
+                                                            <a href="javascript:" class="pr-btn">
+                                                                <span class="before">제네시스 커넥티드 서비스</span>
+                                                                <span class="after">
+                                                                    <span>제네시스 커넥티드 서비스</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pr-txt-box">
+                                                        <p>안전하고 스마트한 드라이빙, Genesis Connected Services</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="depth2-inner-bottom">
+                                                <div class="bottom-gap">
+                                                    <div class="bottom-wrap">
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">고객센터</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">제네시스 멤버스 몰</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">네비게이션 업데이트</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <a href="javascript:" class="main-btn">제네시스</a>
+                                <div class="sub sub5">
+                                    <div class="sub-gap">
+                                        <div class="sub-wrap">
+                                            <div class="depth2-inner-top">
+                                                <div class="depth2-info-box">
+                                                    <div class="info-title">
+                                                        <strong>제네시스</strong>
+                                                    </div>
+                                                    <div class="info-txt">
+                                                        <p>높은 품격과 안목을 가진 사람들을 위한 최상의 자동차와 서비스를 만들어 내고자 합니다.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="depth2-menu-box">
+                                                    <ul class="depth2-menu-inner clearfix">
+                                                        <li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">브랜드 소개</a></span>
+                                                            </div>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">콘셉트카</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">콘셉트카 소개</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">Genesis X Concept</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">Mint Concept</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">Essentia Concept</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">GV80 Concept</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">New York Concept</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">모터쇼</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">모터쇼 소개</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">상하이 오토쇼</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">디지털 모터쇼</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">뉴욕 국제 오토쇼</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">서울 모터쇼</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">부산 국제 모터쇼</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">로드트립</a></span>
+                                                            </div>
+                                                            <ul>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">로드트립 소개</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">서울 2021</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">양양-고성</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">경주</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">남해</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">경기 동부-강원 서부</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">송도-영종도</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">서울 2019</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">몬터레이</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">단양</a>
+                                                                </li>
+                                                                <li class="depth3">
+                                                                    <a href="javascript:" class="depth3-btn">제주</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li><li class="depth2-menu">
+                                                            <div class="depth2-title">
+                                                                <span><a href="javascript:">제네시스X골프</a></span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="depth2-promotion-box">
+                                                    <div class="pr-view-box">
+                                                        <div class="pr-img-box">
+                                                            <div class="pr-img"></div>
+                                                        </div>
+                                                        <div class="pr-btn-box">
+                                                            <a href="javascript:" class="pr-btn">
+                                                                <span class="before">제네시스 커넥티드 서비스</span>
+                                                                <span class="after">
+                                                                    <span>제네시스 커넥티드 서비스</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pr-txt-box">
+                                                        <p>안전하고 스마트한 드라이빙, Genesis Connected Services</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="depth2-inner-bottom">
+                                                <div class="bottom-gap">
+                                                    <div class="bottom-wrap">
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">고객센터</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">제네시스 멤버스 몰</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bottom-btn-box">
+                                                            <a href="javascript:" class="bottom-btn">
+                                                                <span class="txt">네비게이션 업데이트</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -401,6 +781,7 @@
                                         </span>
                                     </span>
                                 </a>
+
                             </li>
                         </ul>
                     </aside>
@@ -408,6 +789,7 @@
             </div>
         </div>
     </header>
+    <div class="sub-show"></div>
     <!-- header end -->
     <!-- main start -->
     <main id="main">
@@ -1020,7 +1402,7 @@
                                     <div class="content-wrap">
                                         <div class="front-face">
                                             <div class="img-wrap">
-                                                <img class="pc-img" src="./img/genesis-kr-main-road-trip-16-desktop-960 x 540-ko.jpg" alt="">
+                                                <img class="pc-img" src="./img/genesis-kr-main-road-trip-16-desktop-960_540-ko.jpg" alt="">
                                                 <img class="mobile-img" src="./img/genesis-kr-main-road-trip-16-mobile-750x1000-ko.jpg" alt="">
                                             </div>
                                             <!-- <div class="img-caption">

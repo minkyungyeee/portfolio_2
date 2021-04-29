@@ -20,10 +20,41 @@
 
         },
         headerFn:function(){
+            var $html = $('html');
+            var $mainBtn = $('#header .main-btn');
+            var $sub = $('#header .sub');
             var $asideBtn = $('#header .aside-btn');
             var $hamGap = $('#header .ham-gap');
             var $bar = $('#header .bar');
 
+            var $modelBtn = $('#header .model-btn');
+            var t = 0;
+
+
+            $mainBtn.on({
+                click:function(){
+                    if($(this).next().hasClass('addSubActive')==false){
+                        $sub.removeClass('addSubActive')
+                        $html.removeClass('addSub')
+                    }
+                    $(this).next().toggleClass('addSubActive');
+                    $html.toggleClass('addSub')
+                    if($(this).hasClass('addColorActive')==false){
+                        $mainBtn.removeClass('addColorActive')
+                    }
+                    $(this).toggleClass('addColorActive');
+                    
+                }
+            });
+            $modelBtn.on({
+                mouseenter:function(){
+                    $modelBtn.removeClass('addBgActive');
+                    $(this).addClass('addBgActive');
+                },
+                mouseleave:function(){
+                    $modelBtn.removeClass('addBgActive');
+                }
+            });
             $asideBtn.on({
                 click:function(e){
                     e.preventDefault();
