@@ -1,6 +1,16 @@
 @charset "UTF-8";
 
 @media all and (max-width:1600px){
+    /* header */
+    /* #wrap #header .wrap .gap .container #nav > ul > li .sub.sub1 .sub-gap {padding:0 50px 50px 50px;box-sizing: border-box;} */
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-top {display:block;padding:3.75% 6.25% 6px 6.25%;}/* 60px 100px 6px 100px */
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-top .depth2-info-box {display:none;}
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-top .depth2-promotion-box {display:none;}
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-top .depth2-menu-box {display:block;width:100%;padding-right:0;}
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-top .depth2-menu-box .depth2-menu-inner .depth2-menu {width:25%;margin-bottom:60px;padding-left:40px;box-sizing: border-box;}
+
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-bottom .bottom-gap {padding:0 100px;}
+    #wrap #header .wrap .gap .container #nav > ul > li .sub .sub-gap .sub-wrap .depth2-inner-bottom .bottom-gap .bottom-wrap {padding-left:0;}
     /* section1 */
     #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide0 .slide-gap .slide-content .text-gap .text-wrap .top-text h2 {font-size:60px;}
 
@@ -28,6 +38,8 @@
 
 @media all and (max-width:1360px){
     #wrap #header .wrap .gap {margin:0 50px;}
+    #wrap #header .wrap .gap .container #aside > ul > li.meun-plus .site-map-wrap .site-map-top .site-map-top-gap {padding:30px 100px 0 100px;}
+    #wrap #header .wrap .gap .container #aside > ul > li.meun-plus .site-map-wrap .site-map-bottom .site-map-bottom-gap {padding:0 100px;}
     /* section1 */
     #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide {background-size:auto 100%;}
     #wrap #main #section1 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .slide-gap {padding:0 15px 70px 15px ;}

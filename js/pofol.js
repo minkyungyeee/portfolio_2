@@ -21,6 +21,7 @@
         },
         headerFn:function(){
             var $html = $('html');
+            var $subShow = $('#wrap .sub-show');
             var $mainBtn = $('#header .main-btn');
             var $sub = $('#header .sub');
             var $asideBtn = $('#header .aside-btn');
@@ -31,21 +32,36 @@
             var t = 0;
 
 
+            $subShow.on({
+                click:function(){
+                    if($sub.hasClass('addSubActive')==true){
+                        $sub.removeClass('addSubActive');
+                        $html.removeClass('addSub');
+                        $subShow.removeClass('addSubActive');
+                        $mainBtn.removeClass('addColorActive');
+                    }
+                }
+            })
             $mainBtn.on({
                 click:function(){
                     if($(this).next().hasClass('addSubActive')==false){
-                        $sub.removeClass('addSubActive')
-                        $html.removeClass('addSub')
+                        $sub.removeClass('addSubActive');
+                        $html.removeClass('addSub');
+                        $subShow.removeClass('addSubActive');
                     }
-                    $(this).next().toggleClass('addSubActive');
-                    $html.toggleClass('addSub')
                     if($(this).hasClass('addColorActive')==false){
                         $mainBtn.removeClass('addColorActive')
                     }
+
+                    $(this).next().toggleClass('addSubActive');
                     $(this).toggleClass('addColorActive');
-                    
+                    $html.toggleClass('addSub');
+                    $subShow.toggleClass('addSubActive');
+                   
+
                 }
             });
+
             $modelBtn.on({
                 mouseenter:function(){
                     $modelBtn.removeClass('addBgActive');
@@ -60,6 +76,10 @@
                     e.preventDefault();
                     $hamGap.toggleClass('addActive');
                     $bar.toggleClass('addActive');
+                    $(this).stop().next().slideToggle();
+                    if(!$html.hasClass('addSub')){
+                        $html.toggleClass('addSub')
+                    }
                 }
             });
         },
@@ -756,18 +776,18 @@
 
             function mainNextSlideFn(){
                 //console.log(cnt);
+                $innerLine.removeClass('addAutoTimer');
+                $innerLine.eq(cnt).addClass('addAutoTimer');
                 $slide.stop().hide().animate({opacity:0},0);
                 $txtWrap.stop().hide().animate({opacity:0},0);
                 $slide.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
                 $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
 
+
+
                 $timerMoveBtn.removeClass('addSlideActive');
                 $timerMoveBtn.eq(cnt).addClass('addSlideActive');
-                $innerLine.removeClass('addAutoTimer');
-                $innerLine.eq(cnt).addClass('addAutoTimer');
-                if($(window).innerWidth()<=780){
-                    
-                }
+
 
             }
 
@@ -942,7 +962,7 @@
                         var that = $(this);
                         setTimeout(function(){
                             that.addClass('addScroll');
-                            that.stop().animate({opacity:1},500);
+                            that.stop().animate({opacity:1},200);
                         },ms*idx)
                     });
                 }
