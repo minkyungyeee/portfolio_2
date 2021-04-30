@@ -38,13 +38,15 @@
 
             function resizeFn(){
                 winH = $(window).innerHeight();
-                $siteMapWrap.css({height:winH,maxHeight:winH})
+                $siteMapWrap.css({height:winH,maxHeight:winH});
                 
                 if($(window).innerWidth()<=1020){
                     $html.removeClass('addSub');
                     $sub.removeClass('addSubActive');
                     $mainBtn.removeClass('addColorActive');
                     $subShow.removeClass('addSubActive');
+                    $asideBtn.stop().next().slideUp(0);
+                    $bar.removeClass('addActive');
                 }
             }
             resizeFn();
@@ -678,6 +680,7 @@
                         prev.push(imsi);
                 }
 
+                console.log(prev)
                 for(var i=0;i<n;i++){
                     $slide.eq(prev[i]).stop().animate({left:(100*(i*-1))+'%'},0).animate({left:(100*((i*-1)+1))+'%'},600);
                 }
@@ -694,7 +697,7 @@
                     mainslideFn();
                 }
                 else{
-                    /* if(cnt>n-1){cnt=0} */
+                    if(cnt>n-1){cnt=0}
                     mainNextSlideFn();
                 }
             }
@@ -710,7 +713,7 @@
                     mainslideFn();
                 }
                 else{
-                    /* if(cnt<0){cnt=n-1} */
+                    if(cnt<0){cnt=n-1}
                     mainPrevSlideFn();
                 }
                 
