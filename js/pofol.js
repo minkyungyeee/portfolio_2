@@ -25,6 +25,8 @@
             var $mainBtn = $('#header .main-btn');
             var $sub = $('#header .sub');
             var $asideBtn = $('#aside .aside-btn');
+            var $asideSearchBtn = $('#aside .aside-search-btn');
+            var $searchClose = $('#aside .search-close');
             var $moNavBtn = $('#moblieNav .mo-nav-btn');
             var $moNavMain = $('#moblieNav .mo-nav-main');
             var $bar = $('#header .bar');
@@ -40,6 +42,7 @@
                 winH = $(window).innerHeight();
                 $siteMapWrap.css({height:winH,maxHeight:winH});
                 
+                //메뉴들이 펼쳐져잇는데 줄어들엇을때 초기화
                 if($(window).innerWidth()<=1020){
                     $html.removeClass('addSub');
                     $sub.removeClass('addSubActive');
@@ -47,13 +50,15 @@
                     $subShow.removeClass('addSubActive');
                     $asideBtn.stop().next().slideUp(0);
                     $bar.removeClass('addActive');
+                    $asideSearchBtn.next().removeClass('addSearch');
                 }
             }
             resizeFn();
             $(window).resize(function(){
                 setTimeout(resizeFn,100);
             });
-            //메뉴펼쳐졌을때 다른영역클릭시 닫힘
+
+            //메뉴,검색이 펼쳐졌을때 다른영역클릭시 닫힘
             $subShow.on({
                 click:function(){
                     if($sub.hasClass('addSubActive')==true){
@@ -62,12 +67,18 @@
                         $subShow.removeClass('addSubActive');
                         $mainBtn.removeClass('addColorActive');
                     }
+                    if($asideSearchBtn.next().hasClass('addSearch')==true){
+                        $html.removeClass('addSub');
+                        $subShow.removeClass('addSubActive');
+                        $asideSearchBtn.next().removeClass('addSearch');
+                    }
                 }
             });
-            //pc-메인메뉴버튼
+            //pc-네비-메인메뉴버튼
             $mainBtn.on({
                 click:function(){
                     t=1;
+                    $asideSearchBtn.next().removeClass('addSearch')
                     if($(this).next().hasClass('addSubActive')==false){
                         $sub.removeClass('addSubActive');
                         $html.removeClass('addSub');
@@ -81,12 +92,12 @@
                     $(this).toggleClass('addColorActive');
                     $html.toggleClass('addSub');
                     $subShow.toggleClass('addSubActive');
-                   
+                    
 
                 }
             });
 
-            //메뉴자세히보기
+            //네비 안에 메뉴자세히보기
             $modelBtn.on({
                 mouseenter:function(){
                     $modelBtn.removeClass('addBgActive');
@@ -96,7 +107,8 @@
                     $modelBtn.removeClass('addBgActive');
                 }
             });
-            //pc사이트맵
+
+            //pc사이트맵(햄버거버튼)
             $asideBtn.on({
                 click:function(e){
                     e.preventDefault();
@@ -112,6 +124,35 @@
                     }
                 }
             });
+            //pc 검색버튼
+            $asideSearchBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $mainBtn.removeClass('addColorActive');
+                    $sub.removeClass('addSubActive');
+                    if($subShow.hasClass('addSubActive')==false){
+                        $subShow.removeClass('addSubActive');
+                    }
+                    $(this).next().toggleClass('addSearch');
+                    $subShow.toggleClass('addSubActive');
+                    $html.toggleClass('addSub');
+                    if(t==1){
+                        $html.addClass('addSub');
+                        $subShow.addClass('addSubActive');
+                    }
+                }
+            });
+            //pc 검색버튼 닫기
+            $searchClose.on({
+                click:function(e){
+                    e.preventDefault();
+                    $mainBtn.removeClass('addColorActive');
+                    $sub.removeClass('addSubActive');
+                    $subShow.removeClass('addSubActive');
+                    $html.removeClass('addSub');
+                    $asideSearchBtn.next().removeClass('addSearch');
+                }
+            })
 
             //mobile-btn
             $moNavBtn.on({
@@ -900,7 +941,15 @@
                     });
                 }
             });
-
+            $conLi.on({
+                mouseenter:function(){
+                    $conLi.removeClass('addBack');
+                    $(this).addClass('addBack');
+                },
+                mouseleave:function(){
+                    $conLi.removeClass('addBack');
+                }
+            });
             $moreBtn.on({
                 mouseenter:function(){
                     $moreBtn.removeClass('addUnderLine');
