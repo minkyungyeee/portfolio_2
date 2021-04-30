@@ -594,11 +594,11 @@
             var next = [0,1,2,3,4];
             var prev = [0,4,3,2,1];
 
-            $slide.removeClass('addScroll');
+            $slideContent.removeClass('addScroll');
             $(window).scroll(function(){
                 if($(window).scrollTop() >= $('#section4').offset().top-800){
                     var ms = 200;
-                    $slide.each(function(idx){
+                    $slideContent.each(function(idx){
                         var that = $(this);
                         setTimeout(function(){
                             that.addClass('addScroll');
@@ -606,32 +606,36 @@
                     })
                 }
                 else if($(window).scrollTop()<=10){
-                    $slide.each(function(idx){
-                        if($slide.eq(idx).hasClass('addScroll')==true){
-                            $slide.removeClass('addScroll');
+                    $slideContent.each(function(idx){
+                        if($slideContent.eq(idx).hasClass('addScroll')==true){
+                            $slideContent.removeClass('addScroll');
                         }
                     })
                 }
-            })
-            // function resizeFn(){
-            //     winW = $(window).innerWidth();
-            //     slideW = $('#section4 .slide').width();
-            //     if(winW>1360){
-            //         slideH = slideW*0.984028863;
-            //     }
-            //     else if(winW>1020){
-            //         slideH = slideW*1.080862069;
-            //     }         
-            //     else if(winW>780){
-            //         slideH = slideW*0.926061129;
-            //     }
-            //     $slide.css({height:slideH});
-            // }
-            // setTimeout(resizeFn,100);
+            });
 
             function resizeFn(){
                 winW = $(window).innerWidth();
+                // if(winW>1020){
+                //     $slide.eq(0).css({left:0+'%'});
+                //     $slide.eq(1).css({left:25+'%'});
+                //     $slide.eq(2).css({left:50+'%'});
+                //     $slide.eq(3).css({left:75+'%'});
+                //     $slide.eq(4).css({left:100+'%'});
+                // }
+                // else if(winW>780){
+                //     $slide.eq(0).css({left:(33.3333*0)+'%'});
+                //     $slide.eq(1).css({left:(33.3333*1)+'%'});
+                //     $slide.eq(2).css({left:(33.3333*2)+'%'});
+                //     $slide.eq(3).css({left:(33.3333*3)+'%'});
+                //     $slide.eq(4).css({left:(33.3333*4)+'%'});
+                // }
                 if(winW<=780){
+                    // $slide.eq(0).css({left:(100*0)+'%'});
+                    // $slide.eq(1).css({left:(100*1)+'%'});
+                    // $slide.eq(2).css({left:(100*2)+'%'});
+                    // $slide.eq(3).css({left:(100*3)+'%'});
+                    // $slide.eq(4).css({left:(100*4)+'%'});
                     $content.addClass('addPrevActive');
                     $content.addClass('addNextActive');
                 }
@@ -799,6 +803,7 @@
             var LineW = 0;
             var setId = null;
             var setTimeBar = null;
+            var setTimeBar2 = null;
 
             function resizeFn(){
                 winW = $(window).innerWidth();
@@ -816,7 +821,9 @@
                 setTimeout(resizeFn,100);
             });
 
+
             function mainNextSlideFn(){
+
                 //console.log(cnt);
                 $innerLine.removeClass('addAutoTimer');
                 $innerLine.eq(cnt).addClass('addAutoTimer');
@@ -824,12 +831,8 @@
                 $txtWrap.stop().hide().animate({opacity:0},0);
                 $slide.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
                 $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
-
-
-
                 $timerMoveBtn.removeClass('addSlideActive');
                 $timerMoveBtn.eq(cnt).addClass('addSlideActive');
-
 
             }
 
@@ -861,16 +864,9 @@
             // $innerLine.each(function(idx){
 
             // });
-            function autoPlayFn(){
-                var w = 0;
-                setId = setInterval(nextSlideCountFn,6000);
-/*                 setTimeBar = setInterval(function(){
-                    //w ++;
-                    //LineW = w*1.8;
-                    $innerLine.eq(cnt).addClass('addAutoTimer');
-                    //$innerLine.eq(cnt).css({width:LineW+'%'});
-                },0); */
 
+            function autoPlayFn(){
+                setId = setInterval(nextSlideCountFn,6000);
             }
 
             autoPlayFn();
