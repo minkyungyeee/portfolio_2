@@ -20,30 +20,44 @@
 
         },
         headerFn:function(){
-            var $html = $('html');
-            var $subShow = $('#wrap .sub-show');
-            var $mainBtn = $('#header .main-btn');
-            var $sub = $('#header .sub');
-            var $asideBtn = $('#aside .aside-btn');
+            var $html           = $('html');
+            var $subShow        = $('#wrap .sub-show');
+            var $mainBtn        = $('#header .main-btn');
+            var $sub            = $('#header .sub');
+            var $asideBtn       = $('#aside .aside-btn');
+            var $siteMapWrap    = $('#aside .site-map-wrap');
             var $asideSearchBtn = $('#aside .aside-search-btn');
-            var $searchClose = $('#aside .search-close');
-            var $moNavBtn = $('#moblieNav .mo-nav-btn');
-            var $moNavMain = $('#moblieNav .mo-nav-main');
-            var $bar = $('#header .bar');
-            var $moBar = $('#header .mo-bar');
+            var $searchClose    = $('#aside .search-close');
+
+            var $bar         = $('#aside .bar');
+            var $moBar       = $('#header .mo-bar');
+            var $moNavBtn    = $('#moblieNav .mo-nav-btn');
+            var $moNavMain   = $('#moblieNav .mo-nav-main');
+            var $moDepth2    = $('#moblieNav .mo-depth2');
+            var $moDepth3    = $('#moblieNav .mo-depth3')
+            var $moDepth1Btn = $('#moblieNav .mo-depth1-btn');
+            var $moDepth2Btn = $('#moblieNav .mo-depth2-title-btn');
+            var $moDepth3Btn = $('#moblieNav .mo-depth3-title-btn');
+            var $depth2ListBtn = $('#moblieNav .depth2-list-btn');
 
             var $modelBtn = $('#header .model-btn');
             var t = 0;
 
-            var $siteMapWrap = $('#aside .site-map-wrap');
+
             var winH = $(window).innerHeight;
 
             function resizeFn(){
                 winH = $(window).innerHeight();
                 $siteMapWrap.css({height:winH,maxHeight:winH});
-                
                 //메뉴들이 펼쳐져잇는데 줄어들엇을때 초기화
-                if($(window).innerWidth()<=1020){
+                if($(window).innerWidth()>1020){
+                    if($moBar.hasClass('addActive')){
+                        $html.removeClass('addSub');
+                        $moBar.removeClass('addActive');
+                        $moNavMain.removeClass('addMoSub');
+                    }
+                }
+                else {
                     $html.removeClass('addSub');
                     $sub.removeClass('addSubActive');
                     $mainBtn.removeClass('addColorActive');
@@ -52,6 +66,7 @@
                     $bar.removeClass('addActive');
                     $asideSearchBtn.next().removeClass('addSearch');
                 }
+
             }
             resizeFn();
             $(window).resize(function(){
@@ -59,9 +74,10 @@
             });
 
             //메뉴,검색이 펼쳐졌을때 다른영역클릭시 닫힘
+            //메인 네비가 펼쳐졌을때와, 돋보기버튼이 펼쳐졌을때만 구동함
             $subShow.on({
                 click:function(){
-                    if($sub.hasClass('addSubActive')==true){
+                    if($sub.hasClass('addSubActive')==true){ 
                         $sub.removeClass('addSubActive');
                         $html.removeClass('addSub');
                         $subShow.removeClass('addSubActive');
@@ -78,33 +94,18 @@
             $mainBtn.on({
                 click:function(){
                     t=1;
-                    $asideSearchBtn.next().removeClass('addSearch')
-                    if($(this).next().hasClass('addSubActive')==false){
-                        $sub.removeClass('addSubActive');
+                    $asideSearchBtn.next().removeClass('addSearch');        //돋보기버튼이 활성화되어있다면 없애야함
+                    if($(this).next().hasClass('addSubActive')==false){     //확실하게 초기화해주고 토글실행
                         $html.removeClass('addSub');
                         $subShow.removeClass('addSubActive');
+                        $sub.removeClass('addSubActive');
+                        $mainBtn.removeClass('addColorActive');
                     }
-                    if($(this).hasClass('addColorActive')==false){
-                        $mainBtn.removeClass('addColorActive')
-                    }
 
-                    $(this).next().toggleClass('addSubActive');
-                    $(this).toggleClass('addColorActive');
-                    $html.toggleClass('addSub');
-                    $subShow.toggleClass('addSubActive');
-                    
-
-                }
-            });
-
-            //네비 안에 메뉴자세히보기
-            $modelBtn.on({
-                mouseenter:function(){
-                    $modelBtn.removeClass('addBgActive');
-                    $(this).addClass('addBgActive');
-                },
-                mouseleave:function(){
-                    $modelBtn.removeClass('addBgActive');
+                    $(this).next().toggleClass('addSubActive');             //서브메뉴가 펼쳐졌다가 닫혔다가
+                    $(this).toggleClass('addColorActive');                  //메뉴의 색이 알맞게 변경
+                    $html.toggleClass('addSub');                            //html스크롤을 막았다가 풀었다가
+                    $subShow.toggleClass('addSubActive');                   //닫힐배경을 활성화했다가 죽였다가
                 }
             });
 
@@ -112,33 +113,38 @@
             $asideBtn.on({
                 click:function(e){
                     e.preventDefault();
-                    /* $hamGap.toggleClass('addActive'); */
-                    $bar.toggleClass('addActive');
-/*                     if(!$html.hasClass('addSub')){
-                        $html.removeClass('addSub')
-                    } */
-                    $(this).stop().next().slideToggle();
-                    $html.toggleClass('addSub');
-                    if(t==1){
-                        $html.addClass('addSub');
+
+                    if($asideSearchBtn.next().hasClass('addSearch')){       //서치버튼이 활성화되어있으면
+                        $asideSearchBtn.next().removeClass('addSearch');    //서치버튼 무효화
+                        $html.removeClass('addSub');                        //서치버튼땜에 활성화된 html 스크롤막기를 죽임
+                        $subShow.removeClass('addSubActive');               //서치버튼땜에 활성화된 닫힘영역을 없앰
                     }
+
+                    if(!$sub.hasClass('addSubActive')){                     //sub가 활성화되어있지 않은경우만
+                        $html.toggleClass('addSub');                        //html 토글함 (활성화되어있다면 이미 스크롤막혀있으니까 동작 x)
+                    }
+
+                    $bar.toggleClass('addActive');
+
+                    $(this).stop().next().slideToggle();
                 }
             });
             //pc 검색버튼
-            $asideSearchBtn.on({
+            $asideSearchBtn.on({                                            //서치버튼이 활성화되면
                 click:function(e){
                     e.preventDefault();
-                    $mainBtn.removeClass('addColorActive');
-                    $sub.removeClass('addSubActive');
-                    if($subShow.hasClass('addSubActive')==false){
+                    $mainBtn.removeClass('addColorActive');                 //메인버튼의 색은 없애고
+                    $sub.removeClass('addSubActive');                       //서브메뉴는 접음
+                    if($subShow.hasClass('addSubActive')==false){           //닫힘영역ㅇㅔ 대한 초기화
                         $subShow.removeClass('addSubActive');
                     }
-                    $(this).next().toggleClass('addSearch');
-                    $subShow.toggleClass('addSubActive');
-                    $html.toggleClass('addSub');
-                    if(t==1){
-                        $html.addClass('addSub');
-                        $subShow.addClass('addSubActive');
+                    $(this).next().toggleClass('addSearch');                //서치메뉴가 보였다가, 안보엿다가
+                    $subShow.toggleClass('addSubActive');                   //닫힘영역은 이안에서 토글
+                    $html.toggleClass('addSub');                            //html도 이안에서만 토글
+                    if(t==1){                                               //sub메뉴가 펼쳐진 상태라면 위에서 강제로 닫아버렸기때문에
+                        t=0;
+                        $html.addClass('addSub');                           //html 활성화해주고
+                        $subShow.addClass('addSubActive');                  //subShow도 활성화해주고,,==>여기 쫌 이상한듯
                     }
                 }
             });
@@ -162,7 +168,51 @@
                     $moNavMain.toggleClass('addMoSub');
                     $html.toggleClass('addSub');
                 }
+            });
+
+            $moDepth1Btn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $moDepth1Btn.next().removeClass('addDepth');
+                    $(this).next().addClass('addDepth');
+                }
+            });
+
+            $moDepth2Btn.on({
+                click:function(e){
+                    e.preventDefault();
+                    if($moDepth2.hasClass('addDepth')){
+                        $moDepth2.removeClass('addDepth')
+                    }
+                }
+            });
+
+            $depth2ListBtn.on({
+                click:function(e){
+                    e.preventDefault();
+                    $(this).next().addClass('addDepth');
+                }
+            });
+
+            $moDepth3Btn.on({
+                click:function(e){
+                    e.preventDefault();
+                    if($moDepth3.hasClass('addDepth')){
+                        $moDepth3.removeClass('addDepth')
+                    }
+                }
             })
+
+            //네비 안에 메뉴자세히보기
+            $modelBtn.on({
+                mouseenter:function(){
+                    $modelBtn.removeClass('addBgActive');
+                    $(this).addClass('addBgActive');
+                },
+                mouseleave:function(){
+                    $modelBtn.removeClass('addBgActive');
+                }
+            });
         },
         section1Fn:function(){
             var $slide = $('#section1 .slide');
