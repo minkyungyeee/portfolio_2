@@ -2,7 +2,6 @@
     var pofol = {
         init:function(){
             var that = this;
-                that.scrollEventFn();
                 that.headerFn();
                 that.section1Fn();
                 that.section2Fn();
@@ -14,10 +13,6 @@
                 that.section8Fn();
                 that.section9Fn();
                 that.footerFn();
-        },
-        scrollEventFn:function(){
-
-
         },
         headerFn:function(){
             var $html           = $('html');
@@ -393,7 +388,7 @@
                 }
             });
         },
-        section2Fn:function(){
+        section2Fn:function(){  //아예빼고 동영상으로 바꾸거나, 큐브 클릭스 이미지 팝업으로 (05/03)
             var $cubeBtn = $('#section2 .cube-btn');
             var $cube = $('#section2 .cube');
             var $g80 = $('#section2 .cube .g80');
@@ -674,7 +669,7 @@
 
 
         },
-        section4Fn:function(){
+        section4Fn:function(){ //리사이즈되는순간 반응하게 만들어둠 수정가능하면 필요 (05/03)
             var $content = $('#section4 .content');
             var $slideContent = $('#section4 .slide-content');
             var $slide = $('#section4 .slide');
@@ -714,34 +709,53 @@
 
             function resizeFn(){
                 winW = $(window).innerWidth();
-                // if(winW>1020){
-                //     $slide.eq(0).css({left:0+'%'});
-                //     $slide.eq(1).css({left:25+'%'});
-                //     $slide.eq(2).css({left:50+'%'});
-                //     $slide.eq(3).css({left:75+'%'});
-                //     $slide.eq(4).css({left:100+'%'});
-                // }
-                // else if(winW>780){
-                //     $slide.eq(0).css({left:(33.3333*0)+'%'});
-                //     $slide.eq(1).css({left:(33.3333*1)+'%'});
-                //     $slide.eq(2).css({left:(33.3333*2)+'%'});
-                //     $slide.eq(3).css({left:(33.3333*3)+'%'});
-                //     $slide.eq(4).css({left:(33.3333*4)+'%'});
-                // }
-                if(winW<=780){
-                    // $slide.eq(0).css({left:(100*0)+'%'});
-                    // $slide.eq(1).css({left:(100*1)+'%'});
-                    // $slide.eq(2).css({left:(100*2)+'%'});
-                    // $slide.eq(3).css({left:(100*3)+'%'});
-                    // $slide.eq(4).css({left:(100*4)+'%'});
+
+                if(winW>1020){
+                        cnt=0;
+                        $slideWrap.css({left:0});
+                        $slide.eq(0).css({left:(25*0)+'%'})
+                        $slide.eq(1).css({left:(25*1)+'%'})
+                        $slide.eq(2).css({left:(25*2)+'%'})
+                        $slide.eq(3).css({left:(25*3)+'%'})
+                        $slide.eq(4).css({left:(25*4)+'%'})
+                        $content.removeClass('addPrevActive')
+                        $content.addClass('addNextActive');
+                }
+                else if(winW>780){
+                        cnt=0;
+                        $slideWrap.css({left:0});
+                        $slide.eq(0).css({left:(33.3333*0)+'%'})
+                        $slide.eq(1).css({left:(33.3333*1)+'%'})
+                        $slide.eq(2).css({left:(33.3333*2)+'%'})
+                        $slide.eq(3).css({left:(33.3333*3)+'%'})
+                        $slide.eq(4).css({left:(33.3333*4)+'%'})
+                        $content.removeClass('addPrevActive')
+                        $content.addClass('addNextActive');
+                }
+                else {
+                    cnt=0;
+                    $slideWrap.css({left:0});
+                    $slide.eq(0).css({left:(100*0)+'%'})
+                    $slide.eq(1).css({left:(100*1)+'%'})
+                    $slide.eq(2).css({left:(100*2)+'%'})
+                    $slide.eq(3).css({left:(100*3)+'%'})
+                    $slide.eq(4).css({left:(100*4)+'%'})
                     $content.addClass('addPrevActive');
                     $content.addClass('addNextActive');
                 }
+
+
+                if(winW<=780) {
+                    $content.addClass('addPrevActive');
+                    $content.addClass('addNextActive');
+                }
+
             }
             setTimeout(resizeFn,100);
             $(window).resize(function(){
                 //setTimeout(resizeFn,100);
                 setTimeout(resizeFn,100);
+
             })
             function mainslideFn(){
                 winW = $(window).innerWidth();
@@ -790,15 +804,15 @@
 
             function nextSlideCountFn(){
                 cnt ++;
-                if(winW>1020){
+                if(winW>1020){ //width가 1020을 넘을때(4개슬라이드)
                     if(cnt>1){cnt=0}
                     mainslideFn();
                 }
-                else if(winW>780){
+                else if(winW>780){ //width가 780~1020일때(3개 슬라이드) 
                     if(cnt>2){cnt=0}
                     mainslideFn();
                 }
-                else{
+                else{               //width가 780이하일때 (1개슬라이드)
                     if(cnt>n-1){cnt=0}
                     mainNextSlideFn();
                 }
@@ -887,7 +901,7 @@
                 }
             });
         },
-        section5Fn:function(){
+        section5Fn:function(){  //드래그 기능배우면 반응형에서 드래그스와이프추가 (05/03)
             var winW = $(window).innerWidth();
             var $slide = $('#section5 .slide');
             var $img = $('#section5 .slide img');
@@ -895,16 +909,18 @@
             var $txtWrap = $('#section5 .txt-wrap');
             var $timerMoveBtn = $('#section5 .timer-move-btn');
             var $innerLine = $('#section5 .inner-line');
+            var $timerSwipe = $('#section5 .timer-swipe');
+            var timerSwipeW = $('#section5 .timer-swipe').innerWidth()-30;
 
             var cnt = 0;
             var n   = $('#section5 .slide').length;
-            var LineW = 0;
             var setId = null;
             var setTimeBar = null;
             var setTimeBar2 = null;
 
             function resizeFn(){
                 winW = $(window).innerWidth();
+                timerSwipeW = $('#section5 .timer-swipe').innerWidth()-30;
                 if(winW>1020){
                     $slideConTxt.css({height:winW*0.436941671});
                 }
@@ -921,8 +937,6 @@
 
 
             function mainNextSlideFn(){
-
-                //console.log(cnt);
                 $innerLine.removeClass('addAutoTimer');
                 $innerLine.eq(cnt).addClass('addAutoTimer');
                 $slide.stop().hide().animate({opacity:0},0);
@@ -931,6 +945,12 @@
                 $txtWrap.eq(cnt).stop().show().animate({opacity:0},0).animate({opacity:1},1000);
                 $timerMoveBtn.removeClass('addSlideActive');
                 $timerMoveBtn.eq(cnt).addClass('addSlideActive');
+
+                timerSwipeW = $('#section5 .timer-swipe').innerWidth()-30;
+                
+                if(winW<=780){
+                    $timerSwipe.css({left:-timerSwipeW*cnt});
+                }
 
             }
 
@@ -959,9 +979,6 @@
                     }
                 });
             });
-            // $innerLine.each(function(idx){
-
-            // });
 
             function autoPlayFn(){
                 setId = setInterval(nextSlideCountFn,6000);
@@ -1017,7 +1034,7 @@
                 }
             });
         },
-        section7Fn:function(){
+        section7Fn:function(){  //780에서 배경은fixed 마우스 이동 기능 추가 (05/03)
             var $activeBtn = $('#section7 .active-btn');
             var $imgBox = $('#section7 .img-box');
             var $txtBox = $('#section7 .txt-box');
