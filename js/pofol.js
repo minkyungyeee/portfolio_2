@@ -43,18 +43,25 @@
             var $modelBtn = $('#header .model-btn');
             var t = 0;
 
-
-            var winH = $(window).innerHeight;
+            var winW = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var subH = (winH*0.927760578)-40;
 
             function resizeFn(){
+                winW = $(window).innerWidth();
                 winH = $(window).innerHeight();
+                subH = (winH*0.927760578)-40;
+                $sub.css({maxHeight:subH});
                 $siteMapWrap.css({height:winH,maxHeight:winH});
+                $moNavMain.css({height:winH});
                 //메뉴들이 펼쳐져잇는데 줄어들엇을때 초기화
                 if($(window).innerWidth()>1020){
                     if($moBar.hasClass('addActive')){
                         $html.removeClass('addSub');
                         $moBar.removeClass('addActive');
                         $moNavMain.removeClass('addMoSub');
+                        $moDepth2.removeClass('addDepth')
+                        $moDepth3.removeClass('addDepth')
                     }
                 }
                 else {
