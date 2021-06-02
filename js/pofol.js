@@ -230,6 +230,7 @@
 
             var cnt = 0;
             var n = $('#section1 .slide').length; //4
+            var k = null;
             var setId = null;
             var setId2 = null;
 
@@ -255,20 +256,26 @@
             });
 
             function mainNextSlideFn(){
-                $slide.css({zIndex:1});
-                $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:3}).stop().animate({opacity:0},1000);
+                if(k==null){
+                    k = cnt==0?n-1:cnt-1;
+                }
+                $slide.css({zIndex:1,opacity:1});
+                $slide.eq(k).css({zIndex:2});
                 $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:0},0).animate({opacity:1},1000);
                 pageBtnColorEventFn();
                 //console.log($btnWrap.hasClass('addPauseActive'));
+                k=null;
             }
 
             function mainPrevSlideFn(){
-                $slide.css({zIndex:1,opacity:0});
-                $slide.eq(cnt).css({zIndex:4}).stop().animate({opacity:1},1000);
-                //$slide.eq(cnt==n-1?0:cnt+1).css({zIndex:1/* 3 */}).stop().animate({opacity:0},1000);
-                $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:1/* 3 */}).stop().animate({opacity:1},0).animate({opacity:0},1000);
+                if(k==null){
+                    k = cnt==n-1?0:cnt+1
+                }
+                $slide.css({zIndex:1}).stop().animate({opacity:1},0);
+                $slide.eq(cnt).css({ zIndex:2 }); 
+                $slide.eq(k).css({ zIndex:4 }).stop().animate({opacity:1},0).animate({opacity:0},1500);
                 pageBtnColorEventFn();
-                //console.log($btnWrap.hasClass('addPauseActive'));
+                k=null;
             }
 
             function nextSlideCountFn(){
@@ -323,6 +330,7 @@
                 $(this).on({
                     click:function(){
                         pauseTimerFn();
+                        k = cnt;
                         if(cnt > idx){
                             cnt = idx;
                             mainPrevSlideFn();
@@ -488,6 +496,7 @@
 
             var cnt     = 0;
             var n       = $('#section3 .slide').length;
+            var k       = null;
             var setId   = null;
             var setId2  = null;
 
@@ -515,14 +524,22 @@
 
             function mainNextSlideFn(){
                 if($(window).innerWidth()>1020){
+                    if(k==null){
+                        k = cnt==0?n-1:cnt-1
+                    }
                     $slide.css({zIndex:1});
-                    $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:4});
+                    $slide.eq(k).css({zIndex:2});
                     $slide.eq(cnt).css({zIndex:n}).find('.col').stop().animate({height:0},0).animate({height:100+'%'},1000);
+                    k = null;
                 }
                 else{
-                    $slide.css({zIndex:1});
-                    $slide.eq(cnt==0?n-1:cnt-1).css({zIndex:4});
+                    if(k==null){
+                        k = cnt==0?n-1:cnt-1
+                    }
+                    $slide.css({zIndex:1,opacity:1});
+                    $slide.eq(k).css({zIndex:2});
                     $slide.eq(cnt).css({zIndex:n}).find('.slide-img-wrap').stop().animate({opacity:0},0).animate({opacity:1},1000);
+                    k = null;
                 }
 
                 pageBtnColorEventFn();
@@ -530,14 +547,22 @@
 
             function mainPrevSlideFn(){
                 if($(window).innerWidth()>1020){
+                    if(k==null){
+                        k = cnt==n-1?0:cnt+1;
+                    }
                     $slide.css({zIndex:1}).find('.col').stop().animate({height:100+'%'},0);
-                    $slide.eq(cnt).css({zIndex:4});
-                    $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:n}).find('.col').stop().animate({height:100+'%'},0).animate({height:0},1000);
+                    $slide.eq(cnt).css({zIndex:2});
+                    $slide.eq(k).css({zIndex:n}).find('.col').stop().animate({height:100+'%'},0).animate({height:0},1000);
+                    k = null;
                 }
                 else{
+                    if(k==null){
+                        k = cnt==n-1?0:cnt+1;
+                    }
                     $slide.css({zIndex:1}).find('.slide-img-wrap').stop().animate({opacity:1},0);
-                    $slide.eq(cnt).css({zIndex:4});
-                    $slide.eq(cnt==n-1?0:cnt+1).css({zIndex:n}).find('.slide-img-wrap').stop().animate({opacity:1},0).animate({opacity:0},1000);
+                    $slide.eq(cnt).css({zIndex:2});
+                    $slide.eq(k).css({zIndex:n}).find('.slide-img-wrap').stop().animate({opacity:1},0).animate({opacity:0},1000);
+                    k = null;
                 }
 
                 pageBtnColorEventFn();
@@ -593,6 +618,7 @@
             $pageBtn.each(function(idx){
                 $(this).on({
                     click:function(){
+                        k = cnt;
                         pauseTimerFn();
                         if(cnt > idx){
                             cnt = idx;
