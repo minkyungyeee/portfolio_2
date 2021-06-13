@@ -632,12 +632,10 @@
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt-box.addScroll {top:0;}
 /* #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt1 h2 {} */
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt1 h2 span.pc-type{font-size:50px;color:#fff;text-transform: uppercase;}
-#wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt1 h2 span.mobile-type{display:none;}
 
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt2 {margin:48px 0 43px 0;}
 /* #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt2 strong {} */
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt2 strong span.pc-type{font-size:20px;font-weight:300;}
-#wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt2 strong span.mobile-type{display:none;}
 
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt3 .active-btn {position:relative;display:inline-block;width:210px;height:56px;border:1px solid #fff;line-height:56px;text-align:center;transition:all .4s;}
 #wrap #main #section7 .wrap .gap .container .content .content-gap .content-wrap .txt-wrap .txt3 .active-btn .before {z-index:2;position:relative;display:block;width:100%;color:#111;font-size:16px;background:#fff;}

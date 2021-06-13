@@ -927,7 +927,7 @@
                 }
             });
         },
-        section5Fn:function(){  //드래그 기능배우면 반응형에서 드래그스와이프추가 (05/03)
+        section5Fn:function(){
             var winW = $(window).innerWidth();
             var $slide = $('#section5 .slide');
             var $img = $('#section5 .slide img');
@@ -1068,12 +1068,6 @@
 
 
             $(window).scroll(function(e){
-/*                 if($(window).innerWidth()<=780){
-                    if($(this).scrollTop()>$('#section7').offset().top){
-                        $imgBox.css({position:'fixed',top:0,left:0,height:100+'%'});
-                        $mobileImg.css({position:'relative'})
-                    }
-                } */
                 if($(window).scrollTop()>=$('#section7').offset().top-800){
                     $imgBox.addClass('addScroll');
                     var ms = 400;
