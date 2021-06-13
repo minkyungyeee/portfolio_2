@@ -1065,7 +1065,12 @@
             var $imgBox = $('#section7 .img-box');
             var $txtBox = $('#section7 .txt-box');
             var $mobileImg = $('#section7 .mobile-img');
+            var winW = $(window).innerWidth();
+            var winH = $(window).innerHeight();
+            var t = 0;
 
+            var $sec7 = $('#section7');
+            var $conent = $('#section7 .wrap .gap .container .content')
 
             $(window).scroll(function(e){
                 if($(window).scrollTop()>=$('#section7').offset().top-800){
@@ -1086,6 +1091,62 @@
                     })
                 }
             });
+
+            // function resizeFn(){
+            //     winW = $(window).innerWidth();
+            //     winH = $(window).innerHeight();
+            //     if(winW>780){
+            //         t=0
+            //         pcScrlFn();
+            //     } else{
+            //         t=1;
+            //         moScrlFn();
+            //     }
+            // }
+
+            // setTimeout(resizeFn,100);
+
+            // $(window).resize(function(){
+            //     setTimeout(resizeFn,100);
+            // });
+
+            // function pcScrlFn(){
+            //     $(window).scroll(function(e){
+            //         if($(window).scrollTop()>=$('#section7').offset().top-800){
+            //             $imgBox.addClass('addScroll');
+            //             var ms = 400;
+            //             $txtBox.each(function(idx){
+            //                 var that = $(this);
+            //                 setTimeout(function(){
+            //                     that.addClass('addScroll');
+            //                 },ms*idx)
+            //             });
+            //         }
+            //         if($(window).scrollTop()<=20){
+            //             $txtBox.each(function(idx){
+            //                 if($txtBox.eq(idx).hasClass('addScroll')==true){
+            //                     $txtBox.removeClass('addScroll');
+            //                 }
+            //             })
+            //         }
+            //     });
+            // }
+
+            // function moScrlFn(){
+            //     $imgBox.addClass('addScroll');
+            //     $txtBox.addClass('addScroll');
+            //     $(window).scroll(function(e){
+            //         if($(window).scrollTop()>=$('#section7').offset().top){
+            //             $sec7.css({height:winH});
+            //             $imgBox.css({position:'fixed',height:100+'%'})
+
+            //         }
+            //         if($(window).scrollTop()>=$('#section8').offset().top){
+            //             $sec7.css({height:'auto'});
+            //             $imgBox.css({position:'relative',height:'auto'})
+            //         }
+            //     });
+            // }
 
             $activeBtn.on({
                 mouseenter:function(){
